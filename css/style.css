@@ -85,26 +85,11 @@ button {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: 0;
     overflow: hidden;
     pointer-events: none;
-    /* Zoom'a dayanıklılık için transform-origin */
-    transform-origin: center center;
-}
-
-/* Tablet ve mobilde globe opacity azalt */
-@media (max-width: 1024px) {
-    .globe-container {
-        opacity: 0.5;
-    }
-}
-
-@media (max-width: 768px) {
-    .globe-container {
-        opacity: 0.3;
-    }
 }
 
 /* Hide the old CSS fallback globe when Three.js is active */
