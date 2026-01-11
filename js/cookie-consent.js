@@ -196,6 +196,8 @@
                 toggleSettings();
             } else if (e.target.id === 'cookieSaveSettings' || e.target.closest('#cookieSaveSettings')) {
                 saveSettings();
+            } else if (e.target.id === 'cookieClose' || e.target.closest('#cookieClose')) {
+                hideBanner(); // Sadece gizle, tercih kaydetme
             }
         });
 
