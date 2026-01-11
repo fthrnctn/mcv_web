@@ -1,0 +1,111 @@
+/* ============================================
+   MCV Teknik - CSS Variables
+   ============================================ */
+
+:root {
+    /* ========== ACCENT COLORS ========== */
+    --accent-primary: #FF6B00;
+    --accent-dark: #E55A00;
+    --accent-light: #FF8C3A;
+    --accent-glow: rgba(255, 107, 0, 0.3);
+    --accent-glow-strong: rgba(255, 107, 0, 0.5);
+
+    /* ========== TYPOGRAPHY ========== */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 2.5rem;
+    --font-size-5xl: 3rem;
+    --font-size-hero: 4rem;
+
+    /* ========== SPACING ========== */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 6rem;
+
+    /* ========== BORDER RADIUS ========== */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-2xl: 24px;
+    --radius-full: 50%;
+
+    /* ========== TRANSITIONS ========== */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+
+    /* ========== SHADOWS ========== */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --shadow-glow: 0 0 30px var(--accent-glow);
+
+    /* ========== Z-INDEX ========== */
+    --z-background: -1;
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal: 400;
+    --z-tooltip: 500;
+}
+
+/* ========== LIGHT MODE (Default) ========== */
+:root,
+[data-theme="light"] {
+    /* Backgrounds */
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F5F5F7;
+    --bg-tertiary: #EAEAEC;
+
+    /* Text */
+    --text-primary: #1A1A1A;
+    --text-secondary: #4A4A4A;
+    --text-muted: #7A7A7A;
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-bg-hover: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --glass-border-hover: rgba(255, 107, 0, 0.3);
+
+    /* Globe */
+    --globe-opacity: 0.15;
+    --globe-color: rgba(255, 107, 0, 0.15);
+}
+
+/* ========== DARK MODE ========== */
+[data-theme="dark"] {
+    /* Backgrounds */
+    --bg-primary: #0A0A0F;
+    --bg-secondary: #12121A;
+    --bg-tertiary: #1A1A25;
+
+    /* Text */
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B0B0;
+    --text-muted: #707070;
+
+    /* Glassmorphism */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-bg-hover: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-border-hover: rgba(255, 107, 0, 0.4);
+
+    /* Globe */
+    --globe-opacity: 0.25;
+    --globe-color: rgba(255, 107, 0, 0.25);
+}
