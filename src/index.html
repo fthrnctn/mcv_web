@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="MCV Uluslararası Uygunluk Değerlendirme Danışmanlık - CE Belgelendirme, ISO Yönetim Sistemleri, Teknik Danışmanlık ve Eğitim Hizmetleri">
+    <meta name="keywords"
+        content="CE işareti, ISO belgelendirme, teknik danışmanlık, kalite yönetimi, uygunluk değerlendirme, eğitim">
+    <meta name="author" content="MCV Teknik">
+
+    <title>MCV Teknik | Uluslararası Uygunluk Değerlendirme Danışmanlık</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo/mcv_logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Theme Toggle (load early to prevent flash) -->
+    <script src="js/theme-toggle.js"></script>
+</head>
+
+<body>
+    <!-- 3D Globe Background -->
+    <div class="globe-container">
+        <div class="geometric-globe">
+            <div class="globe-wireframe">
+                <div class="globe-line"></div>
+                <div class="globe-line"></div>
+                <div class="globe-line"></div>
+                <div class="globe-line"></div>
+                <div class="globe-line"></div>
+                <div class="globe-line"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="navbar-logo">
+                <span>MCV Teknik</span>
+            </a>
+
+            <ul class="navbar-nav">
+                <li><a href="#anasayfa" class="nav-link">Anasayfa</a></li>
+                <li><a href="#hizmetler" class="nav-link">Hizmetler</a></li>
+                <li><a href="#faaliyetler" class="nav-link">Faaliyetler</a></li>
+                <li><a href="#hakkimizda" class="nav-link">Hakkımızda</a></li>
+                <li><a href="#iletisim" class="nav-link">İletişim</a></li>
+            </ul>
+
+            <button class="theme-toggle" aria-label="Tema Değiştir">
+                <i class="fas fa-moon"></i>
+            </button>
+
+            <button class="mobile-menu-toggle" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="anasayfa" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="hero-title-main">MCV</span>
+                <span class="hero-title-sub">Uluslararası</span>
+                <span class="hero-title-sub">Uygunluk Değerlendirme Danışmanlık</span>
+            </h1>
+            <p class="hero-subtitle">Kalite ve Güvenliğin Güvencesi</p>
+            <p class="hero-description" style="color: var(--text-secondary); margin-bottom: var(--spacing-2xl);">
+                Uluslararası standartlarda belgelendirme, teknik danışmanlık ve eğitim hizmetleri ile işletmenizi
+                geleceğe taşıyoruz.
+            </p>
+            <div class="hero-buttons">
+                <a href="#hizmetler" class="btn btn-primary">
+                    <i class="fas fa-arrow-right"></i>
+                    Hizmetlerimizi Keşfedin
+                </a>
+                <a href="#iletisim" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    Bize Ulaşın
+                </a>
+            </div>
+        </div>
+
+        <a href="#hizmetler" class="scroll-indicator" id="scrollIndicator">
+            <span>Keşfetmek için kaydırın</span>
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </section>
+
+    <!-- Hizmetlerimiz Section -->
+    <section id="hizmetler" class="section">
+        <div class="container">
+            <h2 class="section-title">Hizmetlerimiz</h2>
+            <p class="section-subtitle">Uzman ekibimizle kapsamlı çözümler sunuyoruz</p>
+
+            <div class="services-grid">
+                <!-- Danışmanlık Card -->
+                <div class="glass-card service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="service-title">Danışmanlık</h3>
+                    <div class="service-badges">
+                        <span class="badge"><i class="fas fa-star"></i> Uzmanlık</span>
+                        <span class="badge"><i class="fas fa-bullseye"></i> Çözüm Odaklı</span>
+                        <span class="badge"><i class="fas fa-chart-line"></i> Değer Katma</span>
+                    </div>
+                    <p class="service-description">
+                        Akreditasyon, bir uygunluk değerlendirme kuruluşunun sunduğu hizmetlerin uluslararası
+                        standartlara uygunluğunun resmi olarak onaylanması sürecidir. Akredite bir kuruluş tarafından
+                        verilen belge veya raporlara sahip ürün ve hizmetler, güvenilirlik, kalite ve mevzuata uygunluk
+                        konusunda güçlü bir teminat sunar.
+                    </p>
+                    <a href="#" class="service-link">
+                        Detaylı Bilgi <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Belgelendirme Card -->
+                <div class="glass-card service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="service-title">Belgelendirme</h3>
+                    <div class="service-badges">
+                        <span class="badge"><i class="fas fa-check-double"></i> Uyumluluk</span>
+                        <span class="badge"><i class="fas fa-shield-alt"></i> Güvenlik</span>
+                        <span class="badge"><i class="fas fa-globe"></i> Pazar Erişimi</span>
+                    </div>
+                    <p class="service-description">
+                        Belgelendirme, bir ürünün, hizmetin, prosesin veya yönetim sisteminin standartlara, teknik
+                        şartnamelere ve ilgili mevzuatlara uygunluğunun bağımsız bir üçüncü taraf kuruluş tarafından
+                        doğrulanması ve onaylanması sürecidir. Bu süreç, işletmelerin kalite, güvenlik ve
+                        sürdürülebilirlik hedeflerini destekler.
+                    </p>
+                    <a href="#" class="service-link">
+                        Detaylı Bilgi <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Eğitim Card -->
+                <div class="glass-card service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="service-title">Eğitim</h3>
+                    <div class="service-badges">
+                        <span class="badge"><i class="fas fa-book-open"></i> Bilgi Aktarımı</span>
+                        <span class="badge"><i class="fas fa-user-graduate"></i> Yetkinlik</span>
+                        <span class="badge"><i class="fas fa-sync-alt"></i> Uyum</span>
+                    </div>
+                    <p class="service-description">
+                        MCV Uluslararası Uygunluk Değerlendirme Danışmanlık, standartlar, belgelendirme, muayene,
+                        laboratuvar yönetimi ve teknik mevzuatlar gibi kritik alanlarda ihtiyaç duyulan bilgi ve
+                        becerileri kazandırmak için profesyonel eğitim hizmetleri sunmaktadır.
+                    </p>
+                    <a href="#" class="service-link">
+                        Detaylı Bilgi <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- NMI Test & Onay Bento Card -->
+                <div class="glass-card nmi-bento-card">
+                    <div class="nmi-bento-content">
+                        <div class="nmi-bento-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="nmi-bento-text">
+                            <h3 class="nmi-bento-title">NMI Test & Onay Hizmeti</h3>
+                            <p class="nmi-bento-description">
+                                Ürünlerinizi dünya markası NMI'ya test ettirin ve uluslararası geçerli onay alın.
+                                MCV olarak NMI Türkiye Temsilcisi olarak bu hizmeti sizlere sunuyoruz.
+                            </p>
+                        </div>
+                        <a href="#iletisim" class="service-link nmi-bento-btn">
+                            Bilgi Al <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referanslar Section -->
+    <section id="referanslar" class="section references-section">
+        <div class="container">
+            <h2 class="section-title">Referanslarımız</h2>
+            <p class="section-subtitle">Güvenilir İş Ortaklarımız</p>
+
+            <div class="logo-carousel-container">
+                <div class="logo-carousel">
+                    <img src="assets/images/references/akmer_logo.png" alt="Akmer" class="reference-logo">
+                    <img src="assets/images/references/barkor_logo.png" alt="Barkor" class="reference-logo">
+                    <img src="assets/images/references/bicakcilar_logo.jpg" alt="Bıçakcılar" class="reference-logo">
+                    <img src="assets/images/references/greatest_logo.png" alt="Greatest" class="reference-logo">
+                    <img src="assets/images/references/hunter_logo.webp" alt="Hunter" class="reference-logo">
+                    <img src="assets/images/references/optival_logo.webp" alt="Optival" class="reference-logo">
+                    <img src="assets/images/references/teogen_logo.jpg" alt="Teogen" class="reference-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Faaliyet Alanları Section -->
+    <section id="faaliyetler" class="section">
+        <div class="container">
+            <h2 class="section-title">Faaliyet Alanlarımız</h2>
+            <p class="section-subtitle">Uzman Olduğumuz Tüm Alanlarda Yanınızdayız</p>
+
+            <div class="activity-grid">
+                <!-- CE İşareti -->
+                <div class="glass-card activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3 class="activity-title">CE İşareti</h3>
+                    <div class="activity-badges">
+                        <span class="badge activity-badge">AB Uyum</span>
+                        <span class="badge activity-badge">Güvenlik</span>
+                        <span class="badge activity-badge">Serbest Dolaşım</span>
+                    </div>
+                    <p class="activity-description">
+                        Ürünlerinizin AB pazarına güvenle girmesi için CE işaretleme danışmanlığı sunuyoruz.
+                    </p>
+                </div>
+
+                <!-- İthalat Teknik İnceleme -->
+                <div class="glass-card activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3 class="activity-title">İthalat Teknik İnceleme</h3>
+                    <div class="activity-badges">
+                        <span class="badge activity-badge">Mevzuat</span>
+                        <span class="badge activity-badge">Teknik Dosya</span>
+                        <span class="badge activity-badge">Gümrük</span>
+                    </div>
+                    <p class="activity-description">
+                        İthal ürünlerin yasal mevzuat ve teknik gerekliliklere uygunluğunu sağlıyoruz.
+                    </p>
+                </div>
+
+                <!-- Uygunluk Belgelendirmesi -->
+                <div class="glass-card activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="activity-title">Uygunluk Belgelendirmesi</h3>
+                    <div class="activity-badges">
+                        <span class="badge activity-badge">Kalite</span>
+                        <span class="badge activity-badge">Güvenlik</span>
+                        <span class="badge activity-badge">Rekabet</span>
+                    </div>
+                    <p class="activity-description">
+                        Ürün ve hizmetlerin standartlara uygunluğunu kanıtlayan belgelendirme danışmanlığı.
+                    </p>
+                </div>
+
+                <!-- UTO -->
+                <div class="glass-card activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3 class="activity-title">Ulusal Teknik Onay (UTO)</h3>
+                    <div class="activity-badges">
+                        <span class="badge activity-badge">Yapı Malzemesi</span>
+                        <span class="badge activity-badge">Dayanıklılık</span>
+                        <span class="badge activity-badge">CPR</span>
+                    </div>
+                    <p class="activity-description">
+                        Yapı malzemelerinin güvenlik ve dayanıklılık standartlarına göre değerlendirilmesi.
+                    </p>
+                </div>
+
+                <!-- GCC -->
+                <div class="glass-card activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="activity-title">GCC (G Mark)</h3>
+                    <div class="activity-badges">
+                        <span class="badge activity-badge">Körfez</span>
+                        <span class="badge activity-badge">Oyuncak</span>
+                        <span class="badge activity-badge">Elektrik</span>
+                    </div>
+                    <p class="activity-description">
+                        Arap Körfezi ülkeleri pazarına giriş için zorunlu G Mark işareti danışmanlığı.
+                    </p>
+                </div>
+
+                <!-- ADR -->
+                <div class="glass-card activity-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="activity-title">ADR Mevzuatı</h3>
+                    <div class="activity-badges">
+                        <span class="badge activity-badge">Tehlikeli Madde</span>
+                        <span class="badge activity-badge">Karayolu</span>
+                        <span class="badge activity-badge">Uluslararası</span>
+                    </div>
+                    <p class="activity-description">
+                        Tehlikeli maddelerin güvenli taşınması için ADR mevzuatı danışmanlığı.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hakkımızda Break Section -->
+    <section id="hakkimizda" class="about-break">
+        <div class="container">
+            <h2 class="section-title">Hakkımızda</h2>
+
+            <div class="about-content">
+                <p class="about-text">
+                    MCV Uluslararası Uygunluk Değerlendirme Danışmanlık, teknik mevzuat, belgelendirme, uygunluk
+                    değerlendirme ve kalite yönetim sistemleri alanında uzmanlaşmış, sektörde öncü bir danışmanlık
+                    firmasıdır. Alanında geniş tecrübeye sahip mühendis ve danışman ekibimizle, müşterilerimize en
+                    güncel mevzuatlara ve uluslararası standartlara tam uyum sağlayacak çözümler sunmaktayız.
+                </p>
+            </div>
+
+            <!-- İstatistikler -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">14+</div>
+                    <div class="stat-label">Yıl</div>
+                    <div class="stat-sublabel">Sektör Deneyimi</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Uzman</div>
+                    <div class="stat-sublabel">Profesyonel Ekip</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Proje</div>
+                    <div class="stat-sublabel">Başarıyla Tamamlandı</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Müşteri</div>
+                    <div class="stat-sublabel">Güvenilir İş Ortağı</div>
+                </div>
+            </div>
+
+            <!-- Vizyon & Misyon -->
+            <div class="vision-mission-grid">
+                <div class="vision-card">
+                    <h3><i class="fas fa-bullseye"></i> Vizyonumuz</h3>
+                    <p>Küresel ölçekte belgelendirme ve teknik danışmanlık alanında en güvenilir ve saygın firmalardan
+                        biri olmayı hedefliyoruz. Müşteri odaklı yaklaşımımız, yenilikçi çözümlerimiz ve uzman
+                        ekibimizle, işletmelerin uluslararası standartlara uyum süreçlerini kolaylaştırarak
+                        sürdürülebilir büyümelerine destek oluyoruz.</p>
+                </div>
+                <div class="mission-card">
+                    <h3><i class="fas fa-rocket"></i> Misyonumuz</h3>
+                    <p>MCV Teknik olarak, müşterilerimizin yasal uygunluk, kalite ve güvenlik gereksinimlerini eksiksiz
+                        bir şekilde karşılamalarına yardımcı olmak, sektörde güvenilir bir çözüm ortağı olmak ve iş
+                        süreçlerini iyileştirerek uzun vadeli başarılarına katkıda bulunmak temel misyonumuzdur.</p>
+                </div>
+
+                <!-- NMI Temsilciliği Kartı -->
+                <div class="nmi-about-card">
+                    <div class="nmi-about-icon">
+                        <img src="assets/images/logo/nmi_reseller_logo.svg" alt="NMI" class="nmi-about-logo">
+                    </div>
+                    <div class="nmi-about-content">
+                        <h3><i class="fas fa-award"></i> NMI Türkiye Temsilcisi</h3>
+                        <p>MCV olarak, Hollanda merkezli dünya markası NMI'nın Türkiye temsilcisiyiz.
+                            Ürünlerinizi NMI'ya test ettirerek dünya çapında geçerli onay alabilirsiniz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Değerlerimiz -->
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h4 class="value-title">Güvenilirlik</h4>
+                    <p class="value-description">Şeffaf ve güvene dayalı iş ilişkileri kuruyoruz.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🎓</div>
+                    <h4 class="value-title">Uzmanlık</h4>
+                    <p class="value-description">Deneyimli mühendis ve danışman ekibimiz, teknik bilgi birikimiyle en
+                        iyi çözümleri sunmaktadır.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">👥</div>
+                    <h4 class="value-title">Müşteri Odaklılık</h4>
+                    <p class="value-description">İşletmelerin özel ihtiyaçlarına yönelik çözümler üreterek
+                        sürdürülebilir büyümelerine katkıda bulunuyoruz.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">✅</div>
+                    <h4 class="value-title">Kalite & Uyum</h4>
+                    <p class="value-description">Mevzuata tam uyum sağlamak için sürekli gelişen ve güncellenen çözümler
+                        sunuyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NMI CTA Banner -->
+    <section class="nmi-cta-banner">
+        <div class="container">
+            <div class="nmi-cta-content">
+                <div class="nmi-cta-icon">
+                    <i class="fas fa-globe-europe"></i>
+                </div>
+                <div class="nmi-cta-text">
+                    <h3>Dünya Markası NMI ile Test & Onay</h3>
+                    <p>Ürünlerinizi NMI'ya gönderin, uluslararası geçerli onay alın!</p>
+                </div>
+                <a href="#iletisim" class="btn btn-primary nmi-cta-btn">
+                    Bilgi Al <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim Section -->
+    <section id="iletisim" class="section">
+        <div class="container">
+            <h2 class="section-title">İletişim</h2>
+            <p class="section-subtitle">Sizinle İletişime Geçmek İstiyoruz</p>
+
+            <div class="contact-grid">
+                <!-- İletişim Bilgileri -->
+                <div class="contact-info glass-card">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-item-content">
+                            <h4>Adres</h4>
+                            <p>MCV Uluslararası Uygunluk Değerlendirme Danışmanlık</p>
+                            <p>100. Yıl Bulvarı 55/A No:20</p>
+                            <p>Ostim Organize Sanayi Bölgesi</p>
+                            <p>Yenimahalle / Ankara, Türkiye</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-item-content">
+                            <h4>Telefon</h4>
+                            <p><a href="tel:+905333447153">+90 533 344 7153</a></p>
+                            <p><a href="tel:+905313057390">+90 531 305 7390</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-item-content">
+                            <h4>E-posta</h4>
+                            <p><a href="mailto:info@mcvteknik.com">info@mcvteknik.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div class="contact-item-content">
+                            <h4>Çalışma Saatleri</h4>
+                            <p>Pazartesi - Cuma: 09:00 - 18:00</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/mcv_consultancy" target="_blank"
+                            class="social-icon instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://x.com/mcv_consultancy" target="_blank" class="social-icon twitter"
+                            aria-label="X/Twitter">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/mcv-consultancy" target="_blank"
+                            class="social-icon linkedin" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- İletişim Formu -->
+                <form class="contact-form glass-card">
+                    <div class="form-group">
+                        <label for="name">Ad Soyad *</label>
+                        <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-posta *</label>
+                        <input type="email" id="email" name="email" placeholder="ornek@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Telefon</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+90 5XX XXX XX XX">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Konu *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Konu Seçiniz</option>
+                            <option value="genel">Genel Bilgi Talebi</option>
+                            <option value="ce">CE Belgelendirme</option>
+                            <option value="iso">ISO Danışmanlık</option>
+                            <option value="egitim">Eğitim Programları</option>
+                            <option value="teklif">Teklif Talebi</option>
+                            <option value="diger">Diğer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mesaj *</label>
+                        <textarea id="message" name="message" placeholder="Mesajınızı yazınız..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Mesaj Gönder
+                    </button>
+                </form>
+            </div>
+
+            <!-- Harita -->
+            <div class="contact-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.123456789!2d32.123456!3d39.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sOstim%20OSB!5e0!3m2!1str!2str!4v1234567890"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="navbar-logo">
+                        <span>MCV Teknik</span>
+                    </a>
+                    <p>Uluslararası standartlarda kalite ve güvenlik danışmanlığı ile işletmenizi geleceğe taşıyoruz.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Hakkımızda</h4>
+                    <ul class="footer-links">
+                        <li><a href="#hakkimizda">Kurumsal</a></li>
+                        <li><a href="#hakkimizda">Vizyonumuz</a></li>
+                        <li><a href="#hakkimizda">Ekibimiz</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Hizmetler</h4>
+                    <ul class="footer-links">
+                        <li><a href="#hizmetler">Danışmanlık</a></li>
+                        <li><a href="#hizmetler">Belgelendirme</a></li>
+                        <li><a href="#hizmetler">Eğitim</a></li>
+                        <li><a href="#faaliyetler">Faaliyetler</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>İletişim</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+905333447153">+90 533 344 7153</a></li>
+                        <li><a href="mailto:info@mcvteknik.com">info@mcvteknik.com</a></li>
+                        <li><a href="#iletisim">Ankara, Türkiye</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-nmi">
+                    <h4>NMI Türkiye Temsilcisi</h4>
+                    <a href="https://www.nmi.nl" target="_blank" rel="noopener" class="nmi-logo-link">
+                        <img src="assets/images/logo/nmi_reseller_logo.svg" alt="NMI Reseller" class="nmi-logo">
+                    </a>
+                    <p class="nmi-footer-desc">Ürünlerinizi NMI'ya test ettirin, dünya markasından onay alın.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 MCV Teknik - Tüm Hakları Saklıdır.</p>
+                <div class="footer-bottom-links">
+                    <a href="gizlilik.html">Gizlilik Politikası</a>
+                    <a href="gizlilik.html#kvkk">KVKK</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsentBanner" class="cookie-banner">
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-text">
+                <h3><i class="fas fa-cookie-bite"></i> Çerez Kullanımı</h3>
+                <p>
+                    Web sitemizde deneyiminizi iyileştirmek için çerezler kullanıyoruz.
+                    Detaylı bilgi için <a href="gizlilik.html">Gizlilik Politikamızı</a> inceleyebilirsiniz.
+                </p>
+            </div>
+            <div class="cookie-banner-buttons">
+                <button id="cookieAcceptAll" class="cookie-btn cookie-btn-primary">Tümünü Kabul Et</button>
+                <button id="cookieAcceptNecessary" class="cookie-btn cookie-btn-secondary">Yalnızca Zorunlu</button>
+                <button id="cookieSettingsBtn" class="cookie-btn cookie-btn-link">Ayarlar</button>
+            </div>
+
+            <!-- Detaylı Ayarlar Paneli -->
+            <div id="cookieSettings" class="cookie-settings">
+                <div class="cookie-category">
+                    <div class="cookie-category-info">
+                        <h4>Zorunlu Çerezler</h4>
+                        <p>Web sitesinin düzgün çalışması için gerekli çerezler. Devre dışı bırakılamaz.</p>
+                    </div>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" checked disabled>
+                        <span class="cookie-toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="cookie-category">
+                    <div class="cookie-category-info">
+                        <h4>Analitik Çerezler</h4>
+                        <p>Ziyaretçi davranışlarını analiz etmek için kullanılır (Google Analytics, Microsoft Clarity).
+                        </p>
+                    </div>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="cookieAnalytics">
+                        <span class="cookie-toggle-slider"></span>
+                    </label>
+                </div>
+                <button id="cookieSaveSettings" class="cookie-btn cookie-btn-primary">Seçenekleri Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analytics Placeholder (ID'leri doldurulduğunda aktif olacak) -->
+    <script>
+        // Google Analytics 4 - ID'nizi buraya yazın
+        window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+
+        // Microsoft Clarity - ID'nizi buraya yazın  
+        window.CLARITY_PROJECT_ID = 'YOUR_CLARITY_ID';
+    </script>
+
+    <!-- Three.js for 3D Globe -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="js/globe.js"></script>
+
+    <!-- Cookie Consent Manager -->
+    <script src="js/cookie-consent.js"></script>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
