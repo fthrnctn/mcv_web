@@ -148,10 +148,10 @@
 
     // ========== CONTACT FORM ==========
     function initContactForm() {
-        const form = document.querySelector('.contact-form');
+        const form = document.getElementById('contactForm');
         if (!form) return;
 
-        form.addEventListener('submit', function (e) {
+        form.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             // Get form data
@@ -160,22 +160,75 @@
 
             // Simple validation
             if (!data.name || !data.email || !data.message) {
-                alert('Lütfen tüm zorunlu alanları doldurun.');
+                showFormMessage('Lütfen tüm zorunlu alanları doldurun.', 'error');
                 return;
             }
 
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(data.email)) {
-                alert('Lütfen geçerli bir e-posta adresi girin.');
+                showFormMessage('Lütfen geçerli bir e-posta adresi girin.', 'error');
                 return;
             }
 
-            // TODO: Send form data to server
-            console.log('Form data:', data);
-            alert('Mesajınız başarıyla gönderildi! En kısa sürede sizinle iletişime geçeceğiz.');
-            form.reset();
+            // _replyto alanını email ile doldur
+            formData.set('_replyto', data.email);
+
+            // Submit button'u devre dışı bırak
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const btnText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gönderiliyor...';
+
+            try {
+                // Formspree'ye gönder
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    showFormMessage('Mesajınız başarıyla gönderildi! En kısa sürede sizinle iletişime geçeceğiz.', 'success');
+                    form.reset();
+                } else {
+                    const errorData = await response.json();
+                    showFormMessage(errorData.error || 'Bir hata oluştu. Lütfen tekrar deneyin.', 'error');
+                }
+            } catch (error) {
+                console.error('Form submit error:', error);
+                showFormMessage('Bağlantı hatası. Lütfen internet bağlantınızı kontrol edin.', 'error');
+            } finally {
+                // Button'u tekrar aktif et
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = btnText;
+            }
         });
+    }
+
+    // Form mesajı göster
+    function showFormMessage(message, type) {
+        const form = document.getElementById('contactForm');
+        if (!form) return;
+
+        // Mevcut mesajı kaldır
+        const existingMsg = form.querySelector('.form-message');
+        if (existingMsg) existingMsg.remove();
+
+        // Yeni mesaj oluştur
+        const msgDiv = document.createElement('div');
+        msgDiv.className = 'form-message form-message-' + type;
+        msgDiv.innerHTML = '<i class="fas fa-' + (type === 'success' ? 'check-circle' : 'exclamation-circle') + '"></i> ' + message;
+
+        // Form'un sonuna ekle
+        form.appendChild(msgDiv);
+
+        // 5 saniye sonra kaldır
+        setTimeout(function () {
+            msgDiv.remove();
+        }, 5000);
     }
 
     // ========== LOGO CAROUSEL ==========
