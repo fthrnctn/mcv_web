@@ -130,27 +130,26 @@
                         verilen belge veya raporlara sahip ürün ve hizmetler, güvenilirlik, kalite ve mevzuata uygunluk
                         konusunda güçlü bir teminat sunar.
                     </p>
-                    <a href="#" class="service-link">
+                    <a href="danismanlik.html" class="service-link">
                         Detaylı Bilgi <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
 
-                <!-- Belgelendirme Card -->
+                <!-- İç Tetkik Card -->
                 <div class="glass-card service-card">
                     <div class="service-icon">
-                        <i class="fas fa-certificate"></i>
+                        <i class="fas fa-clipboard-check"></i>
                     </div>
-                    <h3 class="service-title">Belgelendirme</h3>
+                    <h3 class="service-title">İç Tetkik</h3>
                     <div class="service-badges">
-                        <span class="badge"><i class="fas fa-check-double"></i> Uyumluluk</span>
-                        <span class="badge"><i class="fas fa-shield-alt"></i> Güvenlik</span>
-                        <span class="badge"><i class="fas fa-globe"></i> Pazar Erişimi</span>
+                        <span class="badge"><i class="fas fa-search"></i> Denetim</span>
+                        <span class="badge"><i class="fas fa-tasks"></i> Süreç Değerlendirme</span>
+                        <span class="badge"><i class="fas fa-chart-bar"></i> İyileştirme</span>
                     </div>
                     <p class="service-description">
-                        Belgelendirme, bir ürünün, hizmetin, prosesin veya yönetim sisteminin standartlara, teknik
-                        şartnamelere ve ilgili mevzuatlara uygunluğunun bağımsız bir üçüncü taraf kuruluş tarafından
-                        doğrulanması ve onaylanması sürecidir. Bu süreç, işletmelerin kalite, güvenlik ve
-                        sürdürülebilirlik hedeflerini destekler.
+                        İç tetkik, kuruluşların yönetim sistemlerinin etkinliğini ve standartlara uygunluğunu
+                        değerlendirmek için gerçekleştirilen sistematik denetim sürecidir. Süreçlerin iyileştirilmesi
+                        ve uygunsuzlukların tespit edilmesi için kritik bir araçtır.
                     </p>
                     <a href="#" class="service-link">
                         Detaylı Bilgi <i class="fas fa-arrow-right"></i>
@@ -259,12 +258,12 @@
                     </p>
                 </div>
 
-                <!-- Uygunluk Belgelendirmesi -->
+                <!-- Uygunluk Değerlendirmesi -->
                 <div class="glass-card activity-card">
                     <div class="activity-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3 class="activity-title">Uygunluk Belgelendirmesi</h3>
+                    <h3 class="activity-title">Uygunluk Değerlendirmesi</h3>
                     <div class="activity-badges">
                         <span class="badge activity-badge">Kalite</span>
                         <span class="badge activity-badge">Güvenlik</span>
@@ -502,7 +501,8 @@
                 </div>
 
                 <!-- İletişim Formu -->
-                <form class="contact-form glass-card">
+                <form id="contactForm" class="contact-form glass-card" action="https://formspree.io/f/YOUR_FORM_ID"
+                    method="POST">
                     <div class="form-group">
                         <label for="name">Ad Soyad *</label>
                         <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required>
@@ -536,10 +536,20 @@
                         <textarea id="message" name="message" placeholder="Mesajınızı yazınız..." required></textarea>
                     </div>
 
+                    <!-- Formspree için gizli alan - yanıt e-postası -->
+                    <input type="hidden" name="_replyto" value="">
+                    <input type="hidden" name="_subject" value="MCV Teknik Web Sitesi - Yeni İletişim Formu">
+
                     <button type="submit" class="btn btn-primary">
                         <i class="fas fa-paper-plane"></i>
                         Mesaj Gönder
                     </button>
+
+                    <!-- Başarılı gönderim mesajı -->
+                    <div id="formSuccess" class="form-success" style="display: none;">
+                        <i class="fas fa-check-circle"></i>
+                        <p>Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.</p>
+                    </div>
                 </form>
             </div>
 

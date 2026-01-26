@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="MCV Teknik Danışmanlık Hizmetleri - Akreditasyon, ISO Standartları, Yapay Zeka ve Süreç Danışmanlığı">
+    <title>Danışmanlık Hizmetleri | MCV Teknik</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/logo/mcv_logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Page Specific Styles */
+        .service-page {
+            padding-top: 100px;
+            min-height: 100vh;
+            background: var(--bg-primary);
+        }
+
+        .page-header {
+            text-align: center;
+            padding: var(--spacing-3xl) var(--spacing-lg);
+            background: linear-gradient(135deg, rgba(255, 107, 0, 0.1) 0%, transparent 50%);
+        }
+
+        .page-header h1 {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-header p {
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: var(--font-size-lg);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            color: var(--accent-primary);
+            text-decoration: none;
+            margin-bottom: var(--spacing-xl);
+            transition: all 0.3s ease;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-md);
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+            background: rgba(255, 107, 0, 0.1);
+        }
+
+        /* Info Box */
+        .info-box {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-2xl) 0;
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+        }
+
+        .info-box i {
+            color: #3b82f6;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .info-box strong {
+            color: #3b82f6;
+        }
+
+        /* Enhanced Hero */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-2xl);
+            margin-top: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+            padding: var(--spacing-md);
+        }
+
+        .hero-stat-number {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+
+        .hero-stat-label {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+        }
+
+        .hero-highlights {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+            flex-wrap: wrap;
+        }
+
+        .hero-highlight {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-sm) var(--spacing-md);
+            background: var(--glass-bg);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+        }
+
+        .hero-highlight i {
+            color: var(--accent-primary);
+        }
+
+        /* Services Detail Section */
+        .services-detail {
+            padding: var(--spacing-3xl) var(--spacing-lg);
+        }
+
+        .service-detail-card {
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary));
+        }
+
+        .service-detail-header {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .service-detail-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, rgba(255, 107, 0, 0.2), rgba(255, 107, 0, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+        }
+
+        .service-detail-title {
+            font-size: var(--font-size-xl);
+            color: var(--text-primary);
+        }
+
+        .service-detail-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .service-detail-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-detail-content ul li {
+            padding: var(--spacing-sm) 0;
+            padding-left: var(--spacing-lg);
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .service-detail-content ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+        }
+
+        /* Related Activities */
+        .related-activities {
+            padding: var(--spacing-3xl) var(--spacing-lg);
+            background: rgba(255, 107, 0, 0.02);
+        }
+
+        .related-activities .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: var(--spacing-3xl) var(--spacing-lg);
+            background: linear-gradient(135deg, rgba(255, 107, 0, 0.1) 0%, transparent 100%);
+        }
+
+        .cta-section h2 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .cta-section p {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: var(--font-size-2xl);
+            }
+
+            .service-detail-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .service-detail-card::before {
+                width: 100%;
+                height: 4px;
+                top: 0;
+                left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="navbar-logo">
+                <span>MCV Teknik</span>
+            </a>
+
+            <ul class="navbar-nav">
+                <li><a href="index.html#anasayfa" class="nav-link">Anasayfa</a></li>
+                <li><a href="index.html#hizmetler" class="nav-link">Hizmetler</a></li>
+                <li><a href="index.html#faaliyetler" class="nav-link">Faaliyetler</a></li>
+                <li><a href="index.html#hakkimizda" class="nav-link">Hakkımızda</a></li>
+                <li><a href="index.html#iletisim" class="nav-link">İletişim</a></li>
+            </ul>
+
+            <button class="theme-toggle" aria-label="Tema Değiştir">
+                <i class="fas fa-moon"></i>
+            </button>
+
+            <button class="mobile-menu-toggle" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="service-page">
+        <div class="container">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Ana Sayfaya Dön
+            </a>
+
+            <header class="page-header">
+                <h1><i class="fas fa-handshake"></i> Danışmanlık Hizmetleri</h1>
+            </header>
+
+            <!-- Info Box -->
+            <div class="info-box">
+                <i class="fas fa-info-circle"></i>
+                <p>
+                    <strong>Bilgilendirme:</strong> 2014/68/AB Basınçlı Ekipmanlar Yönetmeliği (PED) kapsamında
+                    herhangi bir eğitim ve danışmanlık hizmeti verilmemektedir.
+                </p>
+            </div>
+
+            <!-- Services Detail Section -->
+            <section class="services-detail">
+                <!-- AI Danışmanlık -->
+                <div class="glass-card service-detail-card">
+                    <div class="service-detail-header">
+                        <div class="service-detail-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h2 class="service-detail-title">Yapay Zeka Kullanımı Danışmanlığı</h2>
+                    </div>
+                    <div class="service-detail-content">
+                        <p>
+                            İşletmenizin dijital dönüşüm sürecinde yapay zeka teknolojilerini etkin ve verimli
+                            şekilde kullanabilmeniz için stratejik danışmanlık hizmeti sunuyoruz. Süreçlerinizi
+                            analiz ediyor, uygun AI çözümlerini belirlemenize ve implementasyon süreçlerinde
+                            size rehberlik ediyoruz.
+                        </p>
+                        <ul>
+                            <li>Süreç otomasyonu için AI çözümleri</li>
+                            <li>Veri analizi ve karar destek sistemleri</li>
+                            <li>Kalite kontrol süreçlerinde yapay zeka uygulamaları</li>
+                            <li>Müşteri deneyimi iyileştirme</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ISO/IEC 17065 -->
+                <div class="glass-card service-detail-card">
+                    <div class="service-detail-header">
+                        <div class="service-detail-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h2 class="service-detail-title">ISO/IEC 17065 Akreditasyon Danışmanlığı</h2>
+                    </div>
+                    <div class="service-detail-content">
+                        <p>
+                            <strong>Uygunluk Değerlendirmesi - Ürün, Proses ve Hizmet Belgelendirmesi Yapan
+                                Kuruluşlar İçin Şartlar</strong>
+                        </p>
+                        <p>
+                            Belgelendirme kuruluşunuzun uluslararası standartlara uygun şekilde yapılandırılması
+                            ve TÜRKAK akreditasyonu sürecinde kapsamlı danışmanlık hizmeti sunuyoruz. Kalite
+                            yönetim sisteminizin oluşturulmasından denetim süreçlerine kadar yanınızdayız.
+                        </p>
+                        <ul>
+                            <li>Dokümantasyon hazırlığı ve süreç tasarımı</li>
+                            <li>Personel yeterlilik değerlendirmesi</li>
+                            <li>Tarafsızlık ve gizlilik prosedürleri</li>
+                            <li>Akreditasyon başvuru desteği</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ISO/IEC 17020 -->
+                <div class="glass-card service-detail-card">
+                    <div class="service-detail-header">
+                        <div class="service-detail-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h2 class="service-detail-title">ISO/IEC 17020 Akreditasyon Danışmanlığı</h2>
+                    </div>
+                    <div class="service-detail-content">
+                        <p>
+                            <strong>Çeşitli Tipteki Muayene Kuruluşlarının Çalıştırılmaları İçin Genel
+                                Kriterler</strong>
+                        </p>
+                        <p>
+                            Muayene kuruluşunuzun A, B veya C tipi akreditasyon sürecinde ihtiyaç duyduğunuz
+                            tüm desteği sağlıyoruz. Bağımsızlık kriterleri, teknik yeterlilik ve kalite yönetimi
+                            konularında uzman rehberliği sunuyoruz.
+                        </p>
+                        <ul>
+                            <li>Muayene prosedürlerinin geliştirilmesi</li>
+                            <li>Teknik personel eğitimi ve yeterlilik</li>
+                            <li>Ekipman kalibrasyon ve bakım programları</li>
+                            <li>Raporlama ve kayıt sistemleri</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ISO/IEC 17025 -->
+                <div class="glass-card service-detail-card">
+                    <div class="service-detail-header">
+                        <div class="service-detail-icon">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <h2 class="service-detail-title">ISO/IEC 17025 Akreditasyon Danışmanlığı</h2>
+                    </div>
+                    <div class="service-detail-content">
+                        <p>
+                            <strong>Deney ve Kalibrasyon Laboratuvarlarının Yeterliliği İçin Genel Şartlar</strong>
+                        </p>
+                        <p>
+                            Laboratuvarınızın ulusal ve uluslararası tanınırlık kazanması için TÜRKAK
+                            akreditasyon sürecini yönetiyoruz. Metot validasyonu, ölçüm belirsizliği hesaplamaları
+                            ve kalite güvence sistemleri konularında kapsamlı destek sağlıyoruz.
+                        </p>
+                        <ul>
+                            <li>Kalite yönetim sistemi dokümantasyonu</li>
+                            <li>Metot validasyonu ve verifikasyonu</li>
+                            <li>Ölçüm belirsizliği hesaplamaları</li>
+                            <li>Yeterlilik testleri ve laboratuvarlar arası karşılaştırma</li>
+                            <li>İç denetim ve yönetimin gözden geçirmesi</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Süreç Danışmanlığı -->
+                <div class="glass-card service-detail-card">
+                    <div class="service-detail-header">
+                        <div class="service-detail-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h2 class="service-detail-title">Süreç Danışmanlığı</h2>
+                    </div>
+                    <div class="service-detail-content">
+                        <p>
+                            İşletmenizin operasyonel verimliliğini artırmak için süreç analizi ve
+                            iyileştirme hizmetleri sunuyoruz. Mevcut süreçlerinizi haritalandırıyor,
+                            darboğazları tespit ediyor ve optimize edilmiş iş akışları tasarlıyoruz.
+                        </p>
+                        <ul>
+                            <li>Süreç haritalama ve analiz</li>
+                            <li>Verimlilik ve maliyet optimizasyonu</li>
+                            <li>Risk değerlendirmesi</li>
+                            <li>Performans göstergeleri (KPI) belirleme</li>
+                            <li>Sürekli iyileştirme kültürü oluşturma</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- İthalat Uygunluk Danışmanlığı -->
+                <div class="glass-card service-detail-card">
+                    <div class="service-detail-header">
+                        <div class="service-detail-icon">
+                            <i class="fas fa-ship"></i>
+                        </div>
+                        <h2 class="service-detail-title">İthalat Ürün Uygunluk Danışmanlığı</h2>
+                    </div>
+                    <div class="service-detail-content">
+                        <p>
+                            İthal etmeyi planladığınız ürünlerin Türkiye'deki teknik mevzuata, yönetmeliklere
+                            ve standartlara uygunluğu konusunda kapsamlı danışmanlık hizmeti sunuyoruz.
+                            Gümrük süreçlerinin sorunsuz ilerlemesi için önceden değerlendirme yapıyoruz.
+                        </p>
+                        <ul>
+                            <li>Teknik dosya incelemesi</li>
+                            <li>CE işareti ve uygunluk beyanı kontrolü</li>
+                            <li>Yönetmelik gereksinimleri analizi</li>
+                            <li>TAREKS başvuru desteği</li>
+                            <li>Eksiklik giderme rehberliği</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Uyumluluk Danışmanlığı -->
+                <div class="glass-card service-detail-card">
+                    <div class="service-detail-header">
+                        <div class="service-detail-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h2 class="service-detail-title">Uyumluluk Danışmanlığı</h2>
+                    </div>
+                    <div class="service-detail-content">
+                        <p>
+                            Belgelendirme ve standartlara uyum konusunda işletmenizin ihtiyaçlarına özel
+                            uyumluluk danışmanlığı hizmeti sunuyoruz. Ulusal ve uluslararası mevzuata uyum
+                            süreçlerinizi yönetiyor, riskleri minimize ediyoruz.
+                        </p>
+                        <ul>
+                            <li>Mevzuat uyum analizi</li>
+                            <li>GAP analizi ve aksiyon planlaması</li>
+                            <li>Standart gereksinimlerinin yorumlanması</li>
+                            <li>Denetim hazırlığı ve eşlik</li>
+                            <li>Sürekli uyum izleme</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Activities -->
+            <section class="related-activities">
+                <h2 class="section-title">İlgili Faaliyet Alanlarımız</h2>
+
+                <div class="activities-grid">
+                    <!-- Uygunluk Değerlendirmesi -->
+                    <div class="glass-card activity-card">
+                        <div class="activity-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3 class="activity-title">Uygunluk Değerlendirmesi</h3>
+                        <div class="activity-badges">
+                            <span class="badge activity-badge">Kalite</span>
+                            <span class="badge activity-badge">Güvenlik</span>
+                            <span class="badge activity-badge">Rekabet</span>
+                        </div>
+                        <p class="activity-description">
+                            Ürün ve hizmetlerin standartlara uygunluğunu kanıtlayan belgelendirme danışmanlığı.
+                        </p>
+                    </div>
+
+                    <!-- İthalat Teknik İnceleme -->
+                    <div class="glass-card activity-card">
+                        <div class="activity-icon">
+                            <i class="fas fa-box-open"></i>
+                        </div>
+                        <h3 class="activity-title">İthalat Teknik İnceleme</h3>
+                        <div class="activity-badges">
+                            <span class="badge activity-badge">Mevzuat</span>
+                            <span class="badge activity-badge">Teknik Dosya</span>
+                            <span class="badge activity-badge">Gümrük</span>
+                        </div>
+                        <p class="activity-description">
+                            İthal ürünlerin yasal mevzuat ve teknik gerekliliklere uygunluğunu sağlıyoruz.
+                        </p>
+                    </div>
+
+                    <!-- CE İşareti -->
+                    <div class="glass-card activity-card">
+                        <div class="activity-icon">
+                            <i class="fas fa-tag"></i>
+                        </div>
+                        <h3 class="activity-title">CE İşareti</h3>
+                        <div class="activity-badges">
+                            <span class="badge activity-badge">AB Uyum</span>
+                            <span class="badge activity-badge">Güvenlik</span>
+                            <span class="badge activity-badge">Serbest Dolaşım</span>
+                        </div>
+                        <p class="activity-description">
+                            Ürünlerinizin AB pazarına güvenle girmesi için CE işaretleme danışmanlığı sunuyoruz.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <h2>Danışmanlık İhtiyacınız mı Var?</h2>
+                <p>Uzman ekibimiz size özel çözümler sunmak için hazır.</p>
+                <a href="index.html#iletisim" class="btn btn-primary">
+                    <i class="fas fa-phone"></i> Bize Ulaşın
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="navbar-logo">
+                        <span>MCV Teknik</span>
+                    </a>
+                    <p>Uluslararası standartlarda kalite ve güvenlik danışmanlığı ile işletmenizi geleceğe taşıyoruz.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Hakkımızda</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#hakkimizda">Kurumsal</a></li>
+                        <li><a href="index.html#hakkimizda">Vizyonumuz</a></li>
+                        <li><a href="index.html#hakkimizda">Ekibimiz</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Hizmetler</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#hizmetler">Danışmanlık</a></li>
+                        <li><a href="index.html#hizmetler">Belgelendirme</a></li>
+                        <li><a href="index.html#hizmetler">Eğitim</a></li>
+                        <li><a href="index.html#faaliyetler">Faaliyetler</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>İletişim</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+905333447153">+90 533 344 7153</a></li>
+                        <li><a href="mailto:info@mcvteknik.com">info@mcvteknik.com</a></li>
+                        <li><a href="index.html#iletisim">Ankara, Türkiye</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-nmi">
+                    <h4>NMI Türkiye Temsilcisi</h4>
+                    <a href="https://www.nmi.nl" target="_blank" rel="noopener" class="nmi-logo-link">
+                        <img src="assets/images/logo/nmi_reseller_logo.svg" alt="NMI Reseller" class="nmi-logo">
+                    </a>
+                    <p class="nmi-footer-desc">Ürünlerinizi NMI'ya test ettirin, dünya markasından onay alın.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 MCV Teknik - Tüm Hakları Saklıdır.</p>
+                <div class="footer-bottom-links">
+                    <a href="gizlilik.html">Gizlilik Politikası</a>
+                    <a href="gizlilik.html#kvkk">KVKK</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/theme-toggle.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
