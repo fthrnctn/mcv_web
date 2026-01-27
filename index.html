@@ -138,20 +138,20 @@
                 <!-- İç Tetkik Card -->
                 <div class="glass-card service-card">
                     <div class="service-icon">
-                        <i class="fas fa-clipboard-check"></i>
+                        <i class="fas fa-clipboard-list"></i>
                     </div>
                     <h3 class="service-title">İç Tetkik</h3>
                     <div class="service-badges">
                         <span class="badge"><i class="fas fa-search"></i> Denetim</span>
-                        <span class="badge"><i class="fas fa-tasks"></i> Süreç Değerlendirme</span>
-                        <span class="badge"><i class="fas fa-chart-bar"></i> İyileştirme</span>
+                        <span class="badge"><i class="fas fa-chart-line"></i> İyileştirme</span>
+                        <span class="badge"><i class="fas fa-tasks"></i> Uygunluk</span>
                     </div>
                     <p class="service-description">
-                        İç tetkik, kuruluşların yönetim sistemlerinin etkinliğini ve standartlara uygunluğunu
-                        değerlendirmek için gerçekleştirilen sistematik denetim sürecidir. Süreçlerin iyileştirilmesi
-                        ve uygunsuzlukların tespit edilmesi için kritik bir araçtır.
+                        İç tetkik, kuruluşunuzun yönetim sistemlerinin etkinliğini ve standartlara uygunluğunu
+                        değerlendiren sistematik bir süreçtir. Akreditasyon ve belgelendirme kuruluşları için
+                        zorunlu olan iç tetkiklerinizi deneyimli uzman kadromuzla gerçekleştiriyoruz.
                     </p>
-                    <a href="#" class="service-link">
+                    <a href="ic-tetkik.html" class="service-link">
                         Detaylı Bilgi <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -172,7 +172,7 @@
                         laboratuvar yönetimi ve teknik mevzuatlar gibi kritik alanlarda ihtiyaç duyulan bilgi ve
                         becerileri kazandırmak için profesyonel eğitim hizmetleri sunmaktadır.
                     </p>
-                    <a href="#" class="service-link">
+                    <a href="egitim.html" class="service-link">
                         Detaylı Bilgi <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -258,19 +258,19 @@
                     </p>
                 </div>
 
-                <!-- Uygunluk Değerlendirmesi -->
+                <!-- Uygunluk Değerlendirme -->
                 <div class="glass-card activity-card">
                     <div class="activity-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
-                    <h3 class="activity-title">Uygunluk Değerlendirmesi</h3>
+                    <h3 class="activity-title">Uygunluk Değerlendirme</h3>
                     <div class="activity-badges">
                         <span class="badge activity-badge">Kalite</span>
                         <span class="badge activity-badge">Güvenlik</span>
-                        <span class="badge activity-badge">Rekabet</span>
+                        <span class="badge activity-badge">Standart</span>
                     </div>
                     <p class="activity-description">
-                        Ürün ve hizmetlerin standartlara uygunluğunu kanıtlayan belgelendirme danışmanlığı.
+                        Ürün, hizmet ve süreçlerin ulusal ve uluslararası standartlara uygunluğunun değerlendirilmesi.
                     </p>
                 </div>
 
@@ -501,8 +501,7 @@
                 </div>
 
                 <!-- İletişim Formu -->
-                <form id="contactForm" class="contact-form glass-card" action="https://formspree.io/f/YOUR_FORM_ID"
-                    method="POST">
+                <form class="contact-form glass-card">
                     <div class="form-group">
                         <label for="name">Ad Soyad *</label>
                         <input type="text" id="name" name="name" placeholder="Adınız Soyadınız" required>
@@ -536,20 +535,10 @@
                         <textarea id="message" name="message" placeholder="Mesajınızı yazınız..." required></textarea>
                     </div>
 
-                    <!-- Formspree için gizli alan - yanıt e-postası -->
-                    <input type="hidden" name="_replyto" value="">
-                    <input type="hidden" name="_subject" value="MCV Teknik Web Sitesi - Yeni İletişim Formu">
-
                     <button type="submit" class="btn btn-primary">
                         <i class="fas fa-paper-plane"></i>
                         Mesaj Gönder
                     </button>
-
-                    <!-- Başarılı gönderim mesajı -->
-                    <div id="formSuccess" class="form-success" style="display: none;">
-                        <i class="fas fa-check-circle"></i>
-                        <p>Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.</p>
-                    </div>
                 </form>
             </div>
 
@@ -588,7 +577,7 @@
                     <h4>Hizmetler</h4>
                     <ul class="footer-links">
                         <li><a href="#hizmetler">Danışmanlık</a></li>
-                        <li><a href="#hizmetler">Belgelendirme</a></li>
+                        <li><a href="ic-tetkik.html">İç Tetkik</a></li>
                         <li><a href="#hizmetler">Eğitim</a></li>
                         <li><a href="#faaliyetler">Faaliyetler</a></li>
                     </ul>
