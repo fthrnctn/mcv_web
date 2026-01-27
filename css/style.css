@@ -433,28 +433,7 @@ button {
 
 .service-icon {
     font-size: 3rem;
-    color: var(--accent-primary);
     margin-bottom: var(--spacing-lg);
-    transition: all 0.4s ease;
-    position: relative;
-    display: inline-block;
-    background: linear-gradient(90deg,
-            var(--accent-primary) 0%,
-            var(--accent-primary) 40%,
-            rgba(255, 255, 255, 0.9) 50%,
-            var(--accent-primary) 60%,
-            var(--accent-primary) 100%);
-    background-size: 200% 100%;
-    background-position: 100% 0;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.service-card:hover .service-icon {
-    filter: drop-shadow(0 0 15px rgba(255, 107, 0, 0.6)) drop-shadow(0 0 30px rgba(255, 107, 0, 0.4));
-    transform: scale(1.15);
-    animation: iconPulse 1.5s ease-in-out infinite, iconShine 1.2s ease 0.3s forwards;
 }
 
 @keyframes iconShine {
@@ -477,6 +456,41 @@ button {
     50% {
         filter: drop-shadow(0 0 25px rgba(255, 107, 0, 0.8)) drop-shadow(0 0 50px rgba(255, 107, 0, 0.5));
     }
+}
+
+/* ========== GLOBAL ICON SHIMMER EFFECT ========== */
+.icon-shimmer,
+.service-icon,
+.activity-icon {
+    color: var(--accent-primary);
+    transition: all 0.4s ease;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(90deg,
+            var(--accent-primary) 0%,
+            var(--accent-primary) 40%,
+            rgba(255, 255, 255, 0.9) 50%,
+            var(--accent-primary) 60%,
+            var(--accent-primary) 100%);
+    background-size: 200% 100%;
+    background-position: 150% 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.icon-shimmer:hover,
+.glass-card:hover .icon-shimmer,
+.service-card:hover .service-icon,
+.service-card:hover .icon-shimmer,
+.activity-card:hover .activity-icon,
+.activity-card:hover .icon-shimmer,
+.related-card:hover .activity-icon,
+.related-card:hover .icon-shimmer,
+.value-card:hover .icon-shimmer {
+    filter: drop-shadow(0 0 15px rgba(255, 107, 0, 0.6)) drop-shadow(0 0 30px rgba(255, 107, 0, 0.4));
+    transform: scale(1.15);
+    animation: iconPulse 1.5s ease-in-out infinite, iconShine 1.2s ease 0.3s forwards;
 }
 
 .service-title {
@@ -682,28 +696,7 @@ button {
 
 .activity-icon {
     font-size: 2.5rem;
-    color: var(--accent-primary);
     margin-bottom: var(--spacing-md);
-    transition: all 0.4s ease;
-    position: relative;
-    display: inline-block;
-    background: linear-gradient(90deg,
-            var(--accent-primary) 0%,
-            var(--accent-primary) 40%,
-            rgba(255, 255, 255, 0.9) 50%,
-            var(--accent-primary) 60%,
-            var(--accent-primary) 100%);
-    background-size: 200% 100%;
-    background-position: 100% 0;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.activity-card:hover .activity-icon {
-    filter: drop-shadow(0 0 15px rgba(255, 107, 0, 0.6)) drop-shadow(0 0 30px rgba(255, 107, 0, 0.4));
-    transform: scale(1.15);
-    animation: iconPulse 1.5s ease-in-out infinite, iconShine 1.2s ease 0.3s forwards;
 }
 
 .activity-title {
@@ -731,15 +724,67 @@ button {
     flex-grow: 1;
 }
 
+/* Featured Activity Card (spans 3 columns) */
+.featured-activity-card {
+    grid-column: span 3;
+    flex-direction: row;
+    gap: var(--spacing-xl);
+    align-items: center;
+    text-align: left;
+    padding: var(--spacing-2xl);
+}
+
+.featured-activity-card .activity-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+.featured-activity-content {
+    flex: 1;
+}
+
+.featured-activity-card .activity-title {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.featured-activity-card .activity-badges {
+    display: inline-flex;
+    justify-content: flex-start;
+    margin-bottom: 0;
+}
+
+.featured-activity-card .activity-description {
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+    margin-top: var(--spacing-md);
+}
+
 @media (max-width: 992px) {
     .activity-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-activity-card {
+        grid-column: span 2;
     }
 }
 
 @media (max-width: 576px) {
     .activity-grid {
         grid-template-columns: 1fr;
+    }
+
+    .featured-activity-card {
+        grid-column: span 1;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .featured-activity-card .activity-badges {
+        justify-content: center;
     }
 }
 
@@ -874,6 +919,10 @@ button {
 .value-icon {
     font-size: 2rem;
     margin-bottom: var(--spacing-md);
+}
+
+[data-theme="dark"] .value-icon {
+    color: var(--accent-primary);
 }
 
 .value-title {
