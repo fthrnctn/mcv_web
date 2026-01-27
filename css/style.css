@@ -1033,46 +1033,6 @@ button {
     margin-top: var(--spacing-md);
 }
 
-/* Form Messages */
-.form-message {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    padding: var(--spacing-md);
-    border-radius: var(--radius-md);
-    margin-top: var(--spacing-md);
-    font-size: var(--font-size-sm);
-    animation: slideIn 0.3s ease;
-}
-
-.form-message-success {
-    background: rgba(34, 197, 94, 0.15);
-    color: #22c55e;
-    border: 1px solid rgba(34, 197, 94, 0.3);
-}
-
-.form-message-error {
-    background: rgba(239, 68, 68, 0.15);
-    color: #ef4444;
-    border: 1px solid rgba(239, 68, 68, 0.3);
-}
-
-.form-message i {
-    font-size: 1.2rem;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Map */
 .contact-map {
     margin-top: var(--spacing-2xl);

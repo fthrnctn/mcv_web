@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="MCV Teknik Danışmanlık Hizmetleri - Yapay Zeka, ISO/IEC Akreditasyon, Süreç ve Uyumluluk Danışmanlığı">
+        content="MCV Teknik Eğitim Hizmetleri - Yapay Zeka, ISO/IEC Standartları, Ölçüm Belirsizliği ve Akreditasyon Eğitimleri">
     <meta name="keywords"
-        content="danışmanlık, yapay zeka, ISO 17065, ISO 17020, ISO 17025, akreditasyon, uygunluk değerlendirme">
+        content="eğitim, yapay zeka eğitimi, ISO 17065, ISO 17020, ISO 17025, akreditasyon eğitimi, ölçüm belirsizliği, validasyon">
     <meta name="author" content="MCV Teknik">
 
-    <title>Danışmanlık Hizmetleri | MCV Teknik</title>
+    <title>Eğitim Hizmetleri | MCV Teknik</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo/mcv_logo.png">
@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Theme Toggle (load early to prevent flash) -->
+    <script src="js/theme-toggle.js"></script>
 
     <!-- Page-specific styles -->
     <style>
@@ -100,7 +103,8 @@
         }
 
         .breadcrumb a {
-            color: var(--text-secondary);
+            color: var(--text-muted);
+            text-decoration: none;
             transition: color 0.3s ease;
         }
 
@@ -109,10 +113,10 @@
         }
 
         .breadcrumb i {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
         }
 
-        /* Service Detail Cards */
+        /* Service Detail Grid */
         .services-detail-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -216,13 +220,13 @@
             box-shadow: 0 0 8px rgba(255, 107, 0, 0.4);
         }
 
-        /* Featured Service (AI) */
+        /* Featured Service Card */
         .featured-service {
-            grid-column: 1 / -1;
+            grid-column: span 2;
             display: flex;
             gap: var(--spacing-2xl);
             align-items: center;
-            padding: var(--spacing-2xl);
+            background: linear-gradient(135deg, rgba(255, 107, 0, 0.05) 0%, rgba(255, 107, 0, 0.02) 100%);
         }
 
         .featured-service-content {
@@ -251,7 +255,6 @@
             align-items: flex-start;
             gap: var(--spacing-lg);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
         [data-theme="dark"] .warning-banner {
@@ -260,8 +263,8 @@
         }
 
         .warning-banner-icon {
-            width: 50px;
-            height: 50px;
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -378,36 +381,20 @@
             margin-bottom: var(--spacing-md);
         }
 
-        [data-theme="dark"] .cta-content h2 {
-            color: var(--accent-primary);
-        }
-
         .cta-content p {
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: var(--spacing-xl);
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        [data-theme="dark"] .cta-content p {
-            color: var(--text-secondary);
+            margin: 0 auto var(--spacing-xl);
         }
 
         .cta-btn {
             background: white;
-            color: var(--accent-primary) !important;
-            font-weight: 700;
+            color: var(--accent-primary);
         }
 
         .cta-btn:hover {
             background: rgba(255, 255, 255, 0.9);
-            transform: translateY(-3px);
-        }
-
-        [data-theme="dark"] .cta-btn {
-            background: var(--accent-primary);
-            color: white !important;
+            transform: translateY(-2px);
         }
 
         /* Responsive */
@@ -417,6 +404,7 @@
             }
 
             .featured-service {
+                grid-column: span 1;
                 flex-direction: column;
                 text-align: center;
             }
@@ -430,38 +418,23 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 576px) {
             .related-grid {
                 grid-template-columns: 1fr;
             }
 
-            .warning-banner {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .warning-banner-icon {
-                margin: 0 auto;
+            .page-hero {
+                padding: 100px var(--spacing-md) var(--spacing-2xl);
             }
         }
     </style>
-
-    <!-- Theme Toggle (load early to prevent flash) -->
-    <script src="js/theme-toggle.js"></script>
 </head>
 
-<body class="globe-left">
-    <!-- 3D Globe Background -->
-    <div class="globe-container">
-        <div class="geometric-globe">
-            <div class="globe-wireframe">
-                <div class="globe-line"></div>
-                <div class="globe-line"></div>
-                <div class="globe-line"></div>
-                <div class="globe-line"></div>
-                <div class="globe-line"></div>
-                <div class="globe-line"></div>
-            </div>
+<body>
+    <!-- Background Globe -->
+    <div class="globe-background globe-left">
+        <div class="globe-container">
+            <canvas id="globe-canvas"></canvas>
         </div>
     </div>
 
@@ -473,7 +446,7 @@
             </a>
 
             <ul class="navbar-nav">
-                <li><a href="index.html#anasayfa" class="nav-link">Anasayfa</a></li>
+                <li><a href="index.html" class="nav-link">Anasayfa</a></li>
                 <li><a href="index.html#hizmetler" class="nav-link">Hizmetler</a></li>
                 <li><a href="index.html#faaliyetler" class="nav-link">Faaliyetler</a></li>
                 <li><a href="index.html#hakkimizda" class="nav-link">Hakkımızda</a></li>
@@ -500,20 +473,20 @@
                 <i class="fas fa-chevron-right"></i>
                 <a href="index.html#hizmetler">Hizmetler</a>
                 <i class="fas fa-chevron-right"></i>
-                <span>Danışmanlık</span>
+                <span>Eğitim</span>
             </nav>
             <h1 class="page-hero-title">
-                Danışmanlık
-                <span class="hero-title-sub">Hizmetleri</span>
+                Eğitim
+                <span class="hero-title-sub">Programları</span>
             </h1>
             <p class="page-hero-subtitle">
-                Uluslararası standartlara uyum, akreditasyon ve kalite yönetim sistemleri konusunda
-                uzman ekibimizle işletmenize değer katıyoruz.
+                Uluslararası standartlar, akreditasyon süreçleri ve kalite yönetim sistemleri konusunda
+                uzman kadromuzla profesyonel eğitimler sunuyoruz.
             </p>
             <div class="hero-buttons">
-                <a href="#danismanlik-alanlari" class="btn btn-primary">
+                <a href="#egitim-programlari" class="btn btn-primary">
                     <i class="fas fa-arrow-down"></i>
-                    Hizmetlerimizi Keşfedin
+                    Eğitimlerimizi Keşfedin
                 </a>
                 <a href="index.html#iletisim" class="btn btn-secondary">
                     <i class="fas fa-envelope"></i>
@@ -523,28 +496,29 @@
         </div>
     </section>
 
-    <!-- Services Detail Section -->
-    <section id="danismanlik-alanlari" class="section">
+    <!-- Education Programs Section -->
+    <section id="egitim-programlari" class="section">
         <div class="container">
-            <h2 class="section-title">Danışmanlık Alanlarımız</h2>
-            <p class="section-subtitle">Kapsamlı danışmanlık çözümleriyle yanınızdayız</p>
+            <h2 class="section-title">Eğitim Programlarımız</h2>
+            <p class="section-subtitle">Alanında uzman eğitmenlerimizle profesyonel gelişiminizi destekliyoruz</p>
 
             <div class="services-detail-grid">
-                <!-- Featured: Yapay Zeka Danışmanlığı -->
+                <!-- Featured: Yapay Zeka Kullanım Eğitimi -->
                 <div class="glass-card service-detail-card featured-service">
                     <div class="featured-service-content">
-                        <span class="service-detail-subtitle">Yeni Nesil Teknolojiler</span>
-                        <h3 class="service-detail-title">Yapay Zeka Kullanımı Danışmanlığı</h3>
+                        <span class="service-detail-subtitle">Dijital Dönüşüm</span>
+                        <h3 class="service-detail-title">Yapay Zeka Kullanım Eğitimi</h3>
                         <p class="service-detail-description">
-                            Yapay zeka teknolojilerinin iş süreçlerinize entegrasyonu konusunda stratejik danışmanlık
-                            hizmeti sunuyoruz. İşletmenizin dijital dönüşüm yolculuğunda, yapay zeka çözümlerinin doğru
-                            ve verimli bir şekilde uygulanması için rehberlik ediyoruz.
+                            İş süreçlerinizde yapay zeka teknolojilerini etkin bir şekilde kullanabilmeniz için
+                            kapsamlı eğitim programları sunuyoruz. Teorik bilginin yanı sıra uygulamalı örneklerle
+                            yapay zeka araçlarını günlük iş akışlarınıza entegre etmeyi öğreneceksiniz.
                         </p>
                         <ul class="service-detail-description">
-                            <li>Yapay zeka uygulama stratejisi geliştirme</li>
-                            <li>Otomasyon ve verimlilik artırma çözümleri</li>
-                            <li>Veri analizi ve karar destek sistemleri</li>
-                            <li>Yapay zeka uyumu ve etik kullanım rehberliği</li>
+                            <li>Yapay zeka temelleri ve iş dünyasındaki uygulamaları</li>
+                            <li>ChatGPT, Claude ve diğer üretken AI araçlarının verimli kullanımı</li>
+                            <li>İş süreçlerinde otomasyon ve verimlilik artışı stratejileri</li>
+                            <li>Yapay zeka etiği ve güvenli kullanım prensipleri</li>
+                            <li>Sektöre özel yapay zeka uygulama senaryoları</li>
                         </ul>
                     </div>
                     <div class="featured-service-visual">
@@ -554,123 +528,199 @@
                     </div>
                 </div>
 
-                <!-- ISO/IEC 17065 -->
+                <!-- ISO/IEC 17065 Eğitimi -->
                 <div class="glass-card service-detail-card">
                     <div class="service-detail-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
                     <span class="service-detail-subtitle">Ürün Belgelendirme Kuruluşları</span>
-                    <h3 class="service-detail-title">ISO/IEC 17065 Akreditasyon Danışmanlığı</h3>
+                    <h3 class="service-detail-title">ISO/IEC 17065 Uygunluk Değerlendirmesi Eğitimi</h3>
                     <p class="service-detail-description">
-                        Ürün, proses ve hizmet belgelendirmesi yapan kuruluşlar için uluslararası standart olan
-                        ISO/IEC 17065 kapsamında akreditasyon danışmanlığı sunuyoruz. Bu standart, belgelendirme
-                        kuruluşlarının yetkinliğini, tutarlılığını ve tarafsızlığını garanti altına alır.
+                        Ürün, proses ve hizmet belgelendirmesi yapan kuruluşlar için şartları belirleyen
+                        ISO/IEC 17065 standardının tüm gerekliliklerini kapsayan detaylı eğitim programı.
+                        Belgelendirme kuruluşlarının akreditasyon süreçlerini başarıyla tamamlamaları için
+                        ihtiyaç duydukları tüm bilgi ve becerileri kazandırıyoruz.
                     </p>
                     <ul class="service-detail-description">
-                        <li>Akreditasyon başvuru süreci yönetimi</li>
-                        <li>Dokümantasyon sistemi kurulumu</li>
-                        <li>İç denetim ve yönetimin gözden geçirmesi</li>
-                        <li>TÜRKAK değerlendirmesine hazırlık</li>
+                        <li>Standardın yapısı ve temel gereklilikleri</li>
+                        <li>Belgelendirme süreci yönetimi</li>
+                        <li>Tarafsızlık ve bağımsızlık gereklilikleri</li>
+                        <li>Dokümantasyon ve kayıt yönetimi</li>
+                        <li>İç denetim ve sürekli iyileştirme</li>
                     </ul>
                 </div>
 
-                <!-- ISO/IEC 17020 -->
+                <!-- ISO/IEC 17067 Eğitimi -->
+                <div class="glass-card service-detail-card">
+                    <div class="service-detail-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <span class="service-detail-subtitle">Ürün Belgelendirme Programları</span>
+                    <h3 class="service-detail-title">ISO/IEC 17067 Ürün Belgelendirme Temelleri Eğitimi</h3>
+                    <p class="service-detail-description">
+                        Uygunluk değerlendirmesi kapsamında ürün belgelendirme temelleri ve belgelendirme
+                        programları için kuralları içeren ISO/IEC 17067 standardı eğitimi. Farklı belgelendirme
+                        programı tiplerinin tasarımı ve uygulanması konusunda derinlemesine bilgi sağlıyoruz.
+                    </p>
+                    <ul class="service-detail-description">
+                        <li>Belgelendirme programı türleri ve özellikleri</li>
+                        <li>Program tasarımı ve geliştirme metodolojisi</li>
+                        <li>Gözetim ve yeniden belgelendirme süreçleri</li>
+                        <li>Marka ve işaret kullanım kuralları</li>
+                        <li>Risk temelli yaklaşımlar</li>
+                    </ul>
+                </div>
+
+                <!-- ISO/IEC 17020 Eğitimi -->
                 <div class="glass-card service-detail-card">
                     <div class="service-detail-icon">
                         <i class="fas fa-search"></i>
                     </div>
                     <span class="service-detail-subtitle">Muayene Kuruluşları</span>
-                    <h3 class="service-detail-title">ISO/IEC 17020 Akreditasyon Danışmanlığı</h3>
+                    <h3 class="service-detail-title">ISO/IEC 17020 Muayene Kuruluşları Eğitimi</h3>
                     <p class="service-detail-description">
                         Çeşitli tipteki muayene kuruluşlarının çalıştırılması için genel kriterleri belirleyen
-                        ISO/IEC 17020 standardı kapsamında danışmanlık hizmeti veriyoruz. Bu standart, muayene
-                        kuruluşlarının tarafsız ve yetkin bir şekilde hizmet vermesini sağlar.
+                        ISO/IEC 17020 standardı kapsamında kapsamlı eğitim programı. A, B ve C tipi muayene
+                        kuruluşları için gereklilikleri ve uygulama yöntemlerini ele alıyoruz.
                     </p>
                     <ul class="service-detail-description">
-                        <li>A, B ve C tipi muayene kuruluşu yapılandırma</li>
-                        <li>Muayene prosedürleri geliştirme</li>
-                        <li>Personel yetkinlik değerlendirmesi</li>
+                        <li>Muayene kuruluşu tipleri ve bağımsızlık gereklilikleri</li>
+                        <li>Muayene metotları ve prosedürleri</li>
+                        <li>Personel yetkinlik gereklilikleri</li>
+                        <li>Raporlama ve kayıt tutma standartları</li>
                         <li>Kalite yönetim sistemi entegrasyonu</li>
                     </ul>
                 </div>
 
-                <!-- ISO/IEC 17025 -->
+                <!-- ISO/IEC 17025 Eğitimi -->
                 <div class="glass-card service-detail-card">
                     <div class="service-detail-icon">
                         <i class="fas fa-flask"></i>
                     </div>
                     <span class="service-detail-subtitle">Laboratuvar Akreditasyonu</span>
-                    <h3 class="service-detail-title">ISO/IEC 17025 Akreditasyon Danışmanlığı</h3>
+                    <h3 class="service-detail-title">ISO/IEC 17025 Laboratuvar Yeterliliği Eğitimi</h3>
                     <p class="service-detail-description">
                         Deney ve kalibrasyon laboratuvarlarının yeterliliği için genel şartları tanımlayan
-                        ISO/IEC 17025 standardı kapsamında akreditasyon danışmanlığı sunuyoruz. Laboratuvar
-                        sonuçlarınızın uluslararası geçerliliği için bu akreditasyon kritik öneme sahiptir.
+                        ISO/IEC 17025 standardı eğitimi. Laboratuvarların akreditasyon gerekliliklerini
+                        karşılamaları ve uluslararası kabul görmüş sonuçlar üretmeleri için gereken
+                        tüm yetkinlikleri kazandırıyoruz.
                     </p>
                     <ul class="service-detail-description">
-                        <li>Laboratuvar yönetim sistemi kurulumu</li>
-                        <li>Metot validasyonu ve belirsizlik hesaplamaları</li>
+                        <li>Laboratuvar yönetim sistemi gereklilikleri</li>
+                        <li>Teknik yeterlilik ve personel eğitimi</li>
                         <li>Ekipman yönetimi ve kalibrasyon izlenebilirliği</li>
-                        <li>Yeterlilik testleri ve laboratuvar arası karşılaştırmalar</li>
+                        <li>Metot validasyonu ve doğrulama</li>
+                        <li>Kalite güvence ve kontrol mekanizmaları</li>
                     </ul>
                 </div>
 
-                <!-- Süreç Danışmanlığı -->
+                <!-- Ölçüm Belirsizliği Eğitimi -->
                 <div class="glass-card service-detail-card">
                     <div class="service-detail-icon">
-                        <i class="fas fa-project-diagram"></i>
+                        <i class="fas fa-ruler-combined"></i>
                     </div>
-                    <span class="service-detail-subtitle">Operasyonel Mükemmellik</span>
-                    <h3 class="service-detail-title">Süreç Danışmanlığı</h3>
+                    <span class="service-detail-subtitle">Metroloji</span>
+                    <h3 class="service-detail-title">Ölçüm Belirsizliği Eğitimi</h3>
                     <p class="service-detail-description">
-                        İş süreçlerinizin analizi, optimizasyonu ve yeniden yapılandırılması konusunda
-                        profesyonel danışmanlık hizmeti sunuyoruz. Verimlilik artışı ve maliyet optimizasyonu
-                        hedeflerinize ulaşmanızda yanınızdayız.
+                        Ölçüm sonuçlarının güvenilirliğini değerlendirmek için kritik öneme sahip belirsizlik
+                        hesaplamalarını öğreten kapsamlı eğitim programı. GUM (Guide to the Expression of
+                        Uncertainty in Measurement) prensiplerine dayalı teorik ve pratik uygulamalar
+                        içeren bu eğitim, laboratuvar personeli için vazgeçilmezdir.
                     </p>
                     <ul class="service-detail-description">
-                        <li>Süreç haritalama ve analiz</li>
-                        <li>Darboğaz tespiti ve çözüm önerileri</li>
-                        <li>Performans göstergeleri (KPI) belirleme</li>
-                        <li>Sürekli iyileştirme kültürü oluşturma</li>
+                        <li>Belirsizlik kavramı ve önemi</li>
+                        <li>GUM metodolojisi ve uygulama adımları</li>
+                        <li>A ve B tipi belirsizlik bileşenleri</li>
+                        <li>Birleşik ve genişletilmiş belirsizlik hesaplamaları</li>
+                        <li>Uygunluk kararlarında belirsizlik kullanımı</li>
                     </ul>
                 </div>
 
-                <!-- İthalat Ürün Uygunluk Danışmanlığı -->
-                <div class="glass-card service-detail-card">
-                    <div class="service-detail-icon">
-                        <i class="fas fa-box-open"></i>
-                    </div>
-                    <span class="service-detail-subtitle">İthalat İşlemleri</span>
-                    <h3 class="service-detail-title">İthal Ürün Uygunluk Danışmanlığı</h3>
-                    <p class="service-detail-description">
-                        İthal edilen ürünlerin Türkiye mevzuatına ve ilgili teknik düzenlemelere uygunluğu
-                        konusunda kapsamlı danışmanlık hizmeti sunuyoruz. Gümrük süreçlerinin sorunsuz
-                        tamamlanması için gerekli tüm belgelerin hazırlanmasında destek sağlıyoruz.
-                    </p>
-                    <ul class="service-detail-description">
-                        <li>İthalat öncesi uygunluk değerlendirmesi</li>
-                        <li>Teknik dosya hazırlama ve inceleme</li>
-                        <li>Gümrük mevzuatı rehberliği</li>
-                        <li>Test ve belgelendirme koordinasyonu</li>
-                    </ul>
-                </div>
-
-                <!-- Uyumluluk Danışmanlığı -->
+                <!-- Validasyon Eğitimi -->
                 <div class="glass-card service-detail-card">
                     <div class="service-detail-icon">
                         <i class="fas fa-check-double"></i>
                     </div>
-                    <span class="service-detail-subtitle">Standartlara Uyum</span>
-                    <h3 class="service-detail-title">Belgelendirme ve Uyumluluk Danışmanlığı</h3>
+                    <span class="service-detail-subtitle">Metot Geliştirme</span>
+                    <h3 class="service-detail-title">Validasyon Eğitimi</h3>
                     <p class="service-detail-description">
-                        Ürün ve hizmetlerinizin ulusal ve uluslararası standartlara, teknik düzenlemelere
-                        ve mevzuata uyumu konusunda danışmanlık hizmeti sağlıyoruz. Rekabet avantajı elde
-                        etmeniz ve pazara erişiminizi kolaylaştırmanız için yanınızdayız.
+                        Analitik metotların amaçlanan kullanıma uygunluğunu kanıtlamak için gerçekleştirilen
+                        validasyon süreçlerini kapsayan detaylı eğitim. Laboratuvarların güvenilir ve
+                        tekrarlanabilir sonuçlar üretmesi için kritik öneme sahip bu süreçlerin
+                        tüm aşamalarını ele alıyoruz.
                     </p>
                     <ul class="service-detail-description">
-                        <li>Standart ve mevzuat analizi</li>
-                        <li>Uygunluk boşluk analizi (Gap Analysis)</li>
-                        <li>Belgelendirme süreç yönetimi</li>
-                        <li>Sürdürülebilir uyum programları</li>
+                        <li>Validasyon planlaması ve protokol hazırlama</li>
+                        <li>Performans parametrelerinin belirlenmesi</li>
+                        <li>Doğruluk, kesinlik ve tekrarlanabilirlik çalışmaları</li>
+                        <li>Doğrusallık, aralık ve tespit limitleri</li>
+                        <li>Validasyon raporlaması ve dokümantasyon</li>
+                    </ul>
+                </div>
+
+                <!-- Belgelendirme Programları Geliştirme Eğitimi -->
+                <div class="glass-card service-detail-card">
+                    <div class="service-detail-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <span class="service-detail-subtitle">Program Tasarımı</span>
+                    <h3 class="service-detail-title">Belgelendirme Programlarının Geliştirilmesi Eğitimi</h3>
+                    <p class="service-detail-description">
+                        Etkili ve sürdürülebilir belgelendirme programları tasarlama ve geliştirme
+                        konusunda kapsamlı eğitim. Pazar ihtiyaçlarının analizi, program gerekliliklerinin
+                        belirlenmesi ve uygulamaya alma süreçlerini kapsayan bu eğitim, belgelendirme
+                        kuruluşlarının rekabet avantajı elde etmesini sağlar.
+                    </p>
+                    <ul class="service-detail-description">
+                        <li>Pazar ve paydaş analizi metodolojileri</li>
+                        <li>Program kapsamı ve gerekliliklerin belirlenmesi</li>
+                        <li>Değerlendirme kriterleri ve metodları tasarımı</li>
+                        <li>Pilot uygulama ve geri bildirim süreçleri</li>
+                        <li>Program revizyonu ve sürekli iyileştirme</li>
+                    </ul>
+                </div>
+
+                <!-- Tarafsızlık Risk Analizi Eğitimi -->
+                <div class="glass-card service-detail-card">
+                    <div class="service-detail-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <span class="service-detail-subtitle">Risk Yönetimi</span>
+                    <h3 class="service-detail-title">Tarafsızlık Risk Analizi Eğitimi</h3>
+                    <p class="service-detail-description">
+                        Uygunluk değerlendirme kuruluşlarının tarafsızlığını tehdit eden risklerin
+                        belirlenmesi, değerlendirilmesi ve yönetilmesi konusunda uzman eğitim.
+                        Akreditasyon standartlarının gerektirdiği tarafsızlık güvencesinin
+                        sağlanması için sistematik bir yaklaşım sunuyoruz.
+                    </p>
+                    <ul class="service-detail-description">
+                        <li>Tarafsızlık kavramı ve önemi</li>
+                        <li>Potansiyel tarafsızlık tehditlerinin tanımlanması</li>
+                        <li>Risk değerlendirme metodolojileri</li>
+                        <li>Önleyici ve düzeltici tedbirlerin belirlenmesi</li>
+                        <li>Tarafsızlık komitesi yapılandırması</li>
+                    </ul>
+                </div>
+
+                <!-- EA-2/17 Eğitimi -->
+                <div class="glass-card service-detail-card">
+                    <div class="service-detail-icon">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <span class="service-detail-subtitle">Avrupa Akreditasyonu</span>
+                    <h3 class="service-detail-title">EA-2/17 Onaylanma Amaçlı Akreditasyon Eğitimi</h3>
+                    <p class="service-detail-description">
+                        Avrupa Akreditasyon (EA) tarafından yayınlanan EA-2/17 dokümanı kapsamında
+                        onaylanma amaçlı akreditasyona ilişkin gereklilikleri ele alan uzman eğitim.
+                        Avrupa Birliği mevzuatı çerçevesinde onaylanmış kuruluş statüsü için
+                        akreditasyon süreçlerini detaylı olarak inceliyoruz.
+                    </p>
+                    <ul class="service-detail-description">
+                        <li>EA-2/17 dokümanının yapısı ve kapsamı</li>
+                        <li>Onaylanmış kuruluş gereklilikleri</li>
+                        <li>768/2008/EC Karar çerçevesinde akreditasyon</li>
+                        <li>Sektörel mevzuat ve uyumlaştırılmış standartlar</li>
+                        <li>TÜRKAK ve uluslararası akreditasyon süreçleri</li>
                     </ul>
                 </div>
             </div>
@@ -692,61 +742,61 @@
         </div>
     </section>
 
-    <!-- Related Activities Section -->
+    <!-- Related Services Section -->
     <section class="related-activities">
         <div class="container">
-            <h2 class="section-title">İlgili Faaliyet Alanlarımız</h2>
-            <p class="section-subtitle">Danışmanlık hizmetlerimizle bağlantılı diğer uzmanlık alanlarımız</p>
+            <h2 class="section-title">İlgili Hizmetlerimiz</h2>
+            <p class="section-subtitle">Eğitim programlarımızla bağlantılı diğer hizmet alanlarımız</p>
 
             <div class="related-grid">
-                <!-- CE İşareti -->
+                <!-- Danışmanlık -->
                 <div class="glass-card related-card">
                     <div class="activity-icon">
-                        <i class="fas fa-tag"></i>
+                        <i class="fas fa-handshake"></i>
                     </div>
-                    <h3 class="activity-title">CE İşareti</h3>
+                    <h3 class="activity-title">Danışmanlık Hizmetleri</h3>
                     <div class="activity-badges">
-                        <span class="badge activity-badge">AB Uyum</span>
-                        <span class="badge activity-badge">Güvenlik</span>
-                        <span class="badge activity-badge">Serbest Dolaşım</span>
+                        <span class="badge activity-badge">Akreditasyon</span>
+                        <span class="badge activity-badge">ISO Standartları</span>
+                        <span class="badge activity-badge">Süreç</span>
                     </div>
                     <p class="activity-description">
-                        Ürünlerinizin AB pazarına güvenle girmesi için CE işaretleme danışmanlığı sunuyoruz.
-                        Teknik dosya hazırlama ve uygunluk değerlendirme süreçlerinde yanınızdayız.
+                        Eğitimlerimizi tamamlayan profesyonel danışmanlık hizmetleriyle akreditasyon
+                        süreçlerinizde yanınızdayız.
                     </p>
                 </div>
 
-                <!-- Uygunluk Değerlendirme -->
+                <!-- Belgelendirme -->
                 <div class="glass-card related-card">
                     <div class="activity-icon">
-                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-award"></i>
                     </div>
-                    <h3 class="activity-title">Uygunluk Değerlendirme</h3>
+                    <h3 class="activity-title">Belgelendirme</h3>
                     <div class="activity-badges">
-                        <span class="badge activity-badge">Kalite</span>
-                        <span class="badge activity-badge">Güvenlik</span>
-                        <span class="badge activity-badge">Standart</span>
+                        <span class="badge activity-badge">Ürün</span>
+                        <span class="badge activity-badge">Sistem</span>
+                        <span class="badge activity-badge">Personel</span>
                     </div>
                     <p class="activity-description">
-                        Ürün, hizmet ve süreçlerin ulusal ve uluslararası standartlara uygunluğunun
-                        değerlendirilmesi konusunda uzman danışmanlık sunuyoruz.
+                        Eğitimlerimiz sonrasında belgelendirme süreçlerinde de size destek
+                        sağlıyoruz.
                     </p>
                 </div>
 
-                <!-- İthalat Teknik İnceleme -->
+                <!-- Teknik Destek -->
                 <div class="glass-card related-card">
                     <div class="activity-icon">
-                        <i class="fas fa-box-open"></i>
+                        <i class="fas fa-headset"></i>
                     </div>
-                    <h3 class="activity-title">İthalat Teknik İnceleme</h3>
+                    <h3 class="activity-title">Teknik Destek</h3>
                     <div class="activity-badges">
-                        <span class="badge activity-badge">Mevzuat</span>
-                        <span class="badge activity-badge">Teknik Dosya</span>
-                        <span class="badge activity-badge">Gümrük</span>
+                        <span class="badge activity-badge">7/24 Destek</span>
+                        <span class="badge activity-badge">Uzman Kadro</span>
+                        <span class="badge activity-badge">Hızlı Çözüm</span>
                     </div>
                     <p class="activity-description">
-                        İthal ürünlerin yasal mevzuat ve teknik gerekliliklere uygunluğunu sağlamak için
-                        kapsamlı inceleme ve danışmanlık hizmeti sunuyoruz.
+                        Eğitim sonrasında karşılaşabileceğiniz teknik sorularda uzman
+                        kadromuz yanınızda.
                     </p>
                 </div>
             </div>
@@ -757,10 +807,10 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Danışmanlık Hizmetlerimiz Hakkında Bilgi Alın</h2>
+                <h2>Eğitim Programlarımız Hakkında Bilgi Alın</h2>
                 <p>
-                    Uzman ekibimiz, işletmenizin ihtiyaçlarına özel çözümler sunmak için hazır.
-                    Hemen iletişime geçin, size nasıl yardımcı olabileceğimizi anlatalım.
+                    Kurumunuza özel eğitim programları için uzman ekibimizle iletişime geçin.
+                    Size en uygun eğitim çözümlerini birlikte belirleyelim.
                 </p>
                 <a href="index.html#iletisim" class="btn btn-primary cta-btn">
                     <i class="fas fa-envelope"></i>
@@ -796,7 +846,7 @@
                     <ul class="footer-links">
                         <li><a href="danismanlik.html">Danışmanlık</a></li>
                         <li><a href="ic-tetkik.html">İç Tetkik</a></li>
-                        <li><a href="index.html#hizmetler">Eğitim</a></li>
+                        <li><a href="egitim.html">Eğitim</a></li>
                         <li><a href="index.html#faaliyetler">Faaliyetler</a></li>
                     </ul>
                 </div>
@@ -875,12 +925,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Analytics Placeholder -->
-    <script>
-        window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
-        window.CLARITY_PROJECT_ID = 'YOUR_CLARITY_ID';
-    </script>
 
     <!-- Three.js for 3D Globe -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>

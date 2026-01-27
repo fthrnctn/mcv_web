@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="MCV Teknik Danışmanlık Hizmetleri - Yapay Zeka, ISO/IEC Akreditasyon, Süreç ve Uyumluluk Danışmanlığı">
+        content="MCV Teknik İç Tetkik Hizmetleri - ISO/IEC 17065, ISO/IEC 17020, ISO/IEC 17025 Standartlarına Uygun İç Tetkik">
     <meta name="keywords"
-        content="danışmanlık, yapay zeka, ISO 17065, ISO 17020, ISO 17025, akreditasyon, uygunluk değerlendirme">
+        content="iç tetkik, internal audit, ISO 17065, ISO 17020, ISO 17025, akreditasyon, uygunluk değerlendirme, denetim">
     <meta name="author" content="MCV Teknik">
 
-    <title>Danışmanlık Hizmetleri | MCV Teknik</title>
+    <title>İç Tetkik Hizmetleri | MCV Teknik</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo/mcv_logo.png">
@@ -28,6 +28,9 @@
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Theme Toggle (load early to prevent flash) -->
+    <script src="js/theme-toggle.js"></script>
 
     <!-- Page-specific styles -->
     <style>
@@ -100,7 +103,8 @@
         }
 
         .breadcrumb a {
-            color: var(--text-secondary);
+            color: var(--text-muted);
+            text-decoration: none;
             transition: color 0.3s ease;
         }
 
@@ -109,10 +113,10 @@
         }
 
         .breadcrumb i {
-            font-size: 0.7rem;
+            font-size: 0.6rem;
         }
 
-        /* Service Detail Cards */
+        /* Service Detail Grid */
         .services-detail-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -216,13 +220,13 @@
             box-shadow: 0 0 8px rgba(255, 107, 0, 0.4);
         }
 
-        /* Featured Service (AI) */
+        /* Featured Service Card */
         .featured-service {
-            grid-column: 1 / -1;
+            grid-column: span 2;
             display: flex;
             gap: var(--spacing-2xl);
             align-items: center;
-            padding: var(--spacing-2xl);
+            background: linear-gradient(135deg, rgba(255, 107, 0, 0.05) 0%, rgba(255, 107, 0, 0.02) 100%);
         }
 
         .featured-service-content {
@@ -240,10 +244,10 @@
             font-size: 3rem;
         }
 
-        /* Warning Banner */
-        .warning-banner {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.25) 0%, rgba(239, 68, 68, 0.18) 100%);
-            border: 2px solid rgba(239, 68, 68, 0.5);
+        /* Info Banner */
+        .info-banner {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.35) 0%, rgba(59, 130, 246, 0.25) 100%);
+            border: 2px solid rgba(59, 130, 246, 0.5);
             border-radius: var(--radius-xl);
             padding: var(--spacing-xl);
             margin: var(--spacing-3xl) 0;
@@ -251,35 +255,34 @@
             align-items: flex-start;
             gap: var(--spacing-lg);
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
-        [data-theme="dark"] .warning-banner {
-            background: linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(239, 68, 68, 0.12) 100%);
-            border-color: rgba(239, 68, 68, 0.4);
+        [data-theme="dark"] .info-banner {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(59, 130, 246, 0.2) 100%);
+            border-color: rgba(59, 130, 246, 0.4);
         }
 
-        .warning-banner-icon {
-            width: 50px;
-            height: 50px;
+        .info-banner-icon {
+            width: 48px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(239, 68, 68, 0.2);
+            background: rgba(59, 130, 246, 0.2);
             border-radius: var(--radius-md);
-            color: #ef4444;
+            color: #3b82f6;
             font-size: 1.5rem;
             flex-shrink: 0;
         }
 
-        .warning-banner-content h4 {
+        .info-banner-content h4 {
             font-size: var(--font-size-lg);
             font-weight: 700;
-            color: #ef4444;
+            color: #3b82f6;
             margin-bottom: var(--spacing-sm);
         }
 
-        .warning-banner-content p {
+        .info-banner-content p {
             color: var(--text-secondary);
         }
 
@@ -378,36 +381,20 @@
             margin-bottom: var(--spacing-md);
         }
 
-        [data-theme="dark"] .cta-content h2 {
-            color: var(--accent-primary);
-        }
-
         .cta-content p {
             color: rgba(255, 255, 255, 0.9);
-            margin-bottom: var(--spacing-xl);
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        [data-theme="dark"] .cta-content p {
-            color: var(--text-secondary);
+            margin: 0 auto var(--spacing-xl);
         }
 
         .cta-btn {
             background: white;
-            color: var(--accent-primary) !important;
-            font-weight: 700;
+            color: var(--accent-primary);
         }
 
         .cta-btn:hover {
             background: rgba(255, 255, 255, 0.9);
-            transform: translateY(-3px);
-        }
-
-        [data-theme="dark"] .cta-btn {
-            background: var(--accent-primary);
-            color: white !important;
+            transform: translateY(-2px);
         }
 
         /* Responsive */
@@ -417,6 +404,7 @@
             }
 
             .featured-service {
+                grid-column: span 1;
                 flex-direction: column;
                 text-align: center;
             }
@@ -430,38 +418,23 @@
             }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 576px) {
             .related-grid {
                 grid-template-columns: 1fr;
             }
 
-            .warning-banner {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .warning-banner-icon {
-                margin: 0 auto;
+            .page-hero {
+                padding: 100px var(--spacing-md) var(--spacing-2xl);
             }
         }
     </style>
-
-    <!-- Theme Toggle (load early to prevent flash) -->
-    <script src="js/theme-toggle.js"></script>
 </head>
 
-<body class="globe-left">
-    <!-- 3D Globe Background -->
-    <div class="globe-container">
-        <div class="geometric-globe">
-            <div class="globe-wireframe">
-                <div class="globe-line"></div>
-                <div class="globe-line"></div>
-                <div class="globe-line"></div>
-                <div class="globe-line"></div>
-                <div class="globe-line"></div>
-                <div class="globe-line"></div>
-            </div>
+<body>
+    <!-- Background Globe -->
+    <div class="globe-background globe-left">
+        <div class="globe-container">
+            <canvas id="globe-canvas"></canvas>
         </div>
     </div>
 
@@ -473,7 +446,7 @@
             </a>
 
             <ul class="navbar-nav">
-                <li><a href="index.html#anasayfa" class="nav-link">Anasayfa</a></li>
+                <li><a href="index.html" class="nav-link">Anasayfa</a></li>
                 <li><a href="index.html#hizmetler" class="nav-link">Hizmetler</a></li>
                 <li><a href="index.html#faaliyetler" class="nav-link">Faaliyetler</a></li>
                 <li><a href="index.html#hakkimizda" class="nav-link">Hakkımızda</a></li>
@@ -500,18 +473,18 @@
                 <i class="fas fa-chevron-right"></i>
                 <a href="index.html#hizmetler">Hizmetler</a>
                 <i class="fas fa-chevron-right"></i>
-                <span>Danışmanlık</span>
+                <span>İç Tetkik</span>
             </nav>
             <h1 class="page-hero-title">
-                Danışmanlık
+                İç Tetkik
                 <span class="hero-title-sub">Hizmetleri</span>
             </h1>
             <p class="page-hero-subtitle">
-                Uluslararası standartlara uyum, akreditasyon ve kalite yönetim sistemleri konusunda
-                uzman ekibimizle işletmenize değer katıyoruz.
+                Akreditasyon ve belgelendirme kuruluşları için uluslararası standartlara uygun
+                profesyonel iç tetkik hizmetleri sunuyoruz.
             </p>
             <div class="hero-buttons">
-                <a href="#danismanlik-alanlari" class="btn btn-primary">
+                <a href="#ic-tetkik-hizmetleri" class="btn btn-primary">
                     <i class="fas fa-arrow-down"></i>
                     Hizmetlerimizi Keşfedin
                 </a>
@@ -523,196 +496,160 @@
         </div>
     </section>
 
-    <!-- Services Detail Section -->
-    <section id="danismanlik-alanlari" class="section">
+    <!-- Internal Audit Services Section -->
+    <section id="ic-tetkik-hizmetleri" class="section">
         <div class="container">
-            <h2 class="section-title">Danışmanlık Alanlarımız</h2>
-            <p class="section-subtitle">Kapsamlı danışmanlık çözümleriyle yanınızdayız</p>
+            <h2 class="section-title">İç Tetkik Hizmetlerimiz</h2>
+            <p class="section-subtitle">Akreditasyon standartlarına uygun profesyonel iç tetkik çözümleri</p>
 
             <div class="services-detail-grid">
-                <!-- Featured: Yapay Zeka Danışmanlığı -->
+                <!-- Featured: İç Tetkik Genel Bilgi -->
                 <div class="glass-card service-detail-card featured-service">
                     <div class="featured-service-content">
-                        <span class="service-detail-subtitle">Yeni Nesil Teknolojiler</span>
-                        <h3 class="service-detail-title">Yapay Zeka Kullanımı Danışmanlığı</h3>
+                        <span class="service-detail-subtitle">Profesyonel Denetim Hizmeti</span>
+                        <h3 class="service-detail-title">İç Tetkik Nedir?</h3>
                         <p class="service-detail-description">
-                            Yapay zeka teknolojilerinin iş süreçlerinize entegrasyonu konusunda stratejik danışmanlık
-                            hizmeti sunuyoruz. İşletmenizin dijital dönüşüm yolculuğunda, yapay zeka çözümlerinin doğru
-                            ve verimli bir şekilde uygulanması için rehberlik ediyoruz.
+                            İç tetkik, kuruluşunuzun yönetim sistemlerinin etkinliğini, verimliliğini ve
+                            uluslararası standartlara uygunluğunu bağımsız bir şekilde değerlendiren sistematik
+                            bir süreçtir. Akreditasyon ve belgelendirme kuruluşları için zorunlu olan bu süreç,
+                            sürekli iyileştirme ve uygunluk güvencesi sağlar.
                         </p>
                         <ul class="service-detail-description">
-                            <li>Yapay zeka uygulama stratejisi geliştirme</li>
-                            <li>Otomasyon ve verimlilik artırma çözümleri</li>
-                            <li>Veri analizi ve karar destek sistemleri</li>
-                            <li>Yapay zeka uyumu ve etik kullanım rehberliği</li>
+                            <li>Yönetim sistemi etkinliğinin objektif değerlendirmesi</li>
+                            <li>Standart gerekliliklerine uygunluk doğrulaması</li>
+                            <li>İyileştirme fırsatlarının belirlenmesi</li>
+                            <li>Akreditasyon denetimine hazırlık</li>
+                            <li>Uygunsuzlukların tespiti ve düzeltici faaliyet önerileri</li>
                         </ul>
                     </div>
                     <div class="featured-service-visual">
                         <div class="service-detail-icon">
-                            <i class="fas fa-robot"></i>
+                            <i class="fas fa-clipboard-list"></i>
                         </div>
                     </div>
                 </div>
 
-                <!-- ISO/IEC 17065 -->
+                <!-- ISO/IEC 17065 İç Tetkik -->
                 <div class="glass-card service-detail-card">
                     <div class="service-detail-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
                     <span class="service-detail-subtitle">Ürün Belgelendirme Kuruluşları</span>
-                    <h3 class="service-detail-title">ISO/IEC 17065 Akreditasyon Danışmanlığı</h3>
+                    <h3 class="service-detail-title">ISO/IEC 17065 İç Tetkik</h3>
                     <p class="service-detail-description">
-                        Ürün, proses ve hizmet belgelendirmesi yapan kuruluşlar için uluslararası standart olan
-                        ISO/IEC 17065 kapsamında akreditasyon danışmanlığı sunuyoruz. Bu standart, belgelendirme
-                        kuruluşlarının yetkinliğini, tutarlılığını ve tarafsızlığını garanti altına alır.
+                        Ürün, proses ve hizmet belgelendirmesi yapan kuruluşlar için ISO/IEC 17065 standardı
+                        kapsamında kapsamlı iç tetkik hizmeti sunuyoruz. Belgelendirme kuruluşunuzun tüm
+                        süreçlerini, dokümantasyonunu ve uygulamalarını standart gerekliliklerine göre
+                        değerlendiriyoruz.
                     </p>
                     <ul class="service-detail-description">
-                        <li>Akreditasyon başvuru süreci yönetimi</li>
-                        <li>Dokümantasyon sistemi kurulumu</li>
-                        <li>İç denetim ve yönetimin gözden geçirmesi</li>
-                        <li>TÜRKAK değerlendirmesine hazırlık</li>
+                        <li>Belgelendirme süreçlerinin uygunluk değerlendirmesi</li>
+                        <li>Tarafsızlık ve bağımsızlık gerekliliklerinin kontrolü</li>
+                        <li>Personel yetkinlik değerlendirmesi</li>
+                        <li>Dokümantasyon sistemi incelemesi</li>
+                        <li>TÜRKAK denetimine hazırlık desteği</li>
                     </ul>
                 </div>
 
-                <!-- ISO/IEC 17020 -->
+                <!-- ISO/IEC 17020 İç Tetkik -->
                 <div class="glass-card service-detail-card">
                     <div class="service-detail-icon">
                         <i class="fas fa-search"></i>
                     </div>
                     <span class="service-detail-subtitle">Muayene Kuruluşları</span>
-                    <h3 class="service-detail-title">ISO/IEC 17020 Akreditasyon Danışmanlığı</h3>
+                    <h3 class="service-detail-title">ISO/IEC 17020 İç Tetkik</h3>
                     <p class="service-detail-description">
                         Çeşitli tipteki muayene kuruluşlarının çalıştırılması için genel kriterleri belirleyen
-                        ISO/IEC 17020 standardı kapsamında danışmanlık hizmeti veriyoruz. Bu standart, muayene
-                        kuruluşlarının tarafsız ve yetkin bir şekilde hizmet vermesini sağlar.
+                        ISO/IEC 17020 standardı kapsamında profesyonel iç tetkik hizmeti veriyoruz. A, B ve C
+                        tipi muayene kuruluşları için özelleştirilmiş tetkik yaklaşımı uyguluyoruz.
                     </p>
                     <ul class="service-detail-description">
-                        <li>A, B ve C tipi muayene kuruluşu yapılandırma</li>
-                        <li>Muayene prosedürleri geliştirme</li>
-                        <li>Personel yetkinlik değerlendirmesi</li>
-                        <li>Kalite yönetim sistemi entegrasyonu</li>
+                        <li>Muayene süreç ve prosedürlerinin değerlendirmesi</li>
+                        <li>Bağımsızlık ve tarafsızlık gerekliliklerinin kontrolü</li>
+                        <li>Muayene personeli yetkinlik doğrulaması</li>
+                        <li>Ekipman ve kalibrasyon yönetimi incelemesi</li>
+                        <li>Raporlama sisteminin uygunluk değerlendirmesi</li>
                     </ul>
                 </div>
 
-                <!-- ISO/IEC 17025 -->
+                <!-- ISO/IEC 17025 İç Tetkik -->
                 <div class="glass-card service-detail-card">
                     <div class="service-detail-icon">
                         <i class="fas fa-flask"></i>
                     </div>
-                    <span class="service-detail-subtitle">Laboratuvar Akreditasyonu</span>
-                    <h3 class="service-detail-title">ISO/IEC 17025 Akreditasyon Danışmanlığı</h3>
+                    <span class="service-detail-subtitle">Laboratuvarlar</span>
+                    <h3 class="service-detail-title">ISO/IEC 17025 İç Tetkik</h3>
                     <p class="service-detail-description">
-                        Deney ve kalibrasyon laboratuvarlarının yeterliliği için genel şartları tanımlayan
-                        ISO/IEC 17025 standardı kapsamında akreditasyon danışmanlığı sunuyoruz. Laboratuvar
-                        sonuçlarınızın uluslararası geçerliliği için bu akreditasyon kritik öneme sahiptir.
+                        Deney ve kalibrasyon laboratuvarlarının yeterliliği için genel şartları belirleyen
+                        ISO/IEC 17025 standardı kapsamında detaylı iç tetkik hizmeti sunuyoruz. Laboratuvarınızın
+                        teknik ve yönetim gerekliliklerine uygunluğunu kapsamlı bir şekilde değerlendiriyoruz.
                     </p>
                     <ul class="service-detail-description">
-                        <li>Laboratuvar yönetim sistemi kurulumu</li>
-                        <li>Metot validasyonu ve belirsizlik hesaplamaları</li>
+                        <li>Laboratuvar yönetim sistemi değerlendirmesi</li>
+                        <li>Teknik yeterlilik ve personel yetkinlik kontrolü</li>
                         <li>Ekipman yönetimi ve kalibrasyon izlenebilirliği</li>
-                        <li>Yeterlilik testleri ve laboratuvar arası karşılaştırmalar</li>
-                    </ul>
-                </div>
-
-                <!-- Süreç Danışmanlığı -->
-                <div class="glass-card service-detail-card">
-                    <div class="service-detail-icon">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <span class="service-detail-subtitle">Operasyonel Mükemmellik</span>
-                    <h3 class="service-detail-title">Süreç Danışmanlığı</h3>
-                    <p class="service-detail-description">
-                        İş süreçlerinizin analizi, optimizasyonu ve yeniden yapılandırılması konusunda
-                        profesyonel danışmanlık hizmeti sunuyoruz. Verimlilik artışı ve maliyet optimizasyonu
-                        hedeflerinize ulaşmanızda yanınızdayız.
-                    </p>
-                    <ul class="service-detail-description">
-                        <li>Süreç haritalama ve analiz</li>
-                        <li>Darboğaz tespiti ve çözüm önerileri</li>
-                        <li>Performans göstergeleri (KPI) belirleme</li>
-                        <li>Sürekli iyileştirme kültürü oluşturma</li>
-                    </ul>
-                </div>
-
-                <!-- İthalat Ürün Uygunluk Danışmanlığı -->
-                <div class="glass-card service-detail-card">
-                    <div class="service-detail-icon">
-                        <i class="fas fa-box-open"></i>
-                    </div>
-                    <span class="service-detail-subtitle">İthalat İşlemleri</span>
-                    <h3 class="service-detail-title">İthal Ürün Uygunluk Danışmanlığı</h3>
-                    <p class="service-detail-description">
-                        İthal edilen ürünlerin Türkiye mevzuatına ve ilgili teknik düzenlemelere uygunluğu
-                        konusunda kapsamlı danışmanlık hizmeti sunuyoruz. Gümrük süreçlerinin sorunsuz
-                        tamamlanması için gerekli tüm belgelerin hazırlanmasında destek sağlıyoruz.
-                    </p>
-                    <ul class="service-detail-description">
-                        <li>İthalat öncesi uygunluk değerlendirmesi</li>
-                        <li>Teknik dosya hazırlama ve inceleme</li>
-                        <li>Gümrük mevzuatı rehberliği</li>
-                        <li>Test ve belgelendirme koordinasyonu</li>
-                    </ul>
-                </div>
-
-                <!-- Uyumluluk Danışmanlığı -->
-                <div class="glass-card service-detail-card">
-                    <div class="service-detail-icon">
-                        <i class="fas fa-check-double"></i>
-                    </div>
-                    <span class="service-detail-subtitle">Standartlara Uyum</span>
-                    <h3 class="service-detail-title">Belgelendirme ve Uyumluluk Danışmanlığı</h3>
-                    <p class="service-detail-description">
-                        Ürün ve hizmetlerinizin ulusal ve uluslararası standartlara, teknik düzenlemelere
-                        ve mevzuata uyumu konusunda danışmanlık hizmeti sağlıyoruz. Rekabet avantajı elde
-                        etmeniz ve pazara erişiminizi kolaylaştırmanız için yanınızdayız.
-                    </p>
-                    <ul class="service-detail-description">
-                        <li>Standart ve mevzuat analizi</li>
-                        <li>Uygunluk boşluk analizi (Gap Analysis)</li>
-                        <li>Belgelendirme süreç yönetimi</li>
-                        <li>Sürdürülebilir uyum programları</li>
+                        <li>Metot validasyonu ve belirsizlik hesaplamalarının incelenmesi</li>
+                        <li>Kalite güvence mekanizmalarının uygunluk kontrolü</li>
                     </ul>
                 </div>
             </div>
 
-            <!-- Warning Banner -->
-            <div class="warning-banner">
-                <div class="warning-banner-icon">
-                    <i class="fas fa-exclamation-triangle"></i>
+            <!-- Info Banner -->
+            <div class="info-banner">
+                <div class="info-banner-icon">
+                    <i class="fas fa-info-circle"></i>
                 </div>
-                <div class="warning-banner-content">
-                    <h4>Önemli Bilgilendirme</h4>
+                <div class="info-banner-content">
+                    <h4>Neden İç Tetkik Önemlidir?</h4>
                     <p>
-                        <strong>2014/68/AB Basınçlı Ekipmanlar Yönetmeliği</strong> kapsamında herhangi bir eğitim ve
-                        danışmanlık hizmeti verilmemektedir. Bu konudaki talepler için ilgili yetkili kuruluşlara
-                        başvurmanızı öneriyoruz.
+                        İç tetkikler, akreditasyon kuruluşları tarafından zorunlu tutulan ve yönetim sisteminizin
+                        etkinliğini sürekli olarak izlemenizi sağlayan kritik bir süreçtir. Düzenli iç tetkikler,
+                        dış denetimlere hazırlık sağlar, iyileştirme fırsatlarını ortaya çıkarır ve müşteri
+                        güvenini artırır. Deneyimli tetkikçilerimizle bu süreci profesyonelce yönetiyoruz.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Related Activities Section -->
+    <!-- Related Services Section -->
     <section class="related-activities">
         <div class="container">
-            <h2 class="section-title">İlgili Faaliyet Alanlarımız</h2>
-            <p class="section-subtitle">Danışmanlık hizmetlerimizle bağlantılı diğer uzmanlık alanlarımız</p>
+            <h2 class="section-title">İlgili Hizmetlerimiz</h2>
+            <p class="section-subtitle">İç tetkik hizmetlerimizle bağlantılı diğer uzmanlık alanlarımız</p>
 
             <div class="related-grid">
-                <!-- CE İşareti -->
+                <!-- Danışmanlık -->
                 <div class="glass-card related-card">
                     <div class="activity-icon">
-                        <i class="fas fa-tag"></i>
+                        <i class="fas fa-handshake"></i>
                     </div>
-                    <h3 class="activity-title">CE İşareti</h3>
+                    <h3 class="activity-title">Danışmanlık Hizmetleri</h3>
                     <div class="activity-badges">
-                        <span class="badge activity-badge">AB Uyum</span>
-                        <span class="badge activity-badge">Güvenlik</span>
-                        <span class="badge activity-badge">Serbest Dolaşım</span>
+                        <span class="badge activity-badge">Akreditasyon</span>
+                        <span class="badge activity-badge">ISO Standartları</span>
+                        <span class="badge activity-badge">Süreç</span>
                     </div>
                     <p class="activity-description">
-                        Ürünlerinizin AB pazarına güvenle girmesi için CE işaretleme danışmanlığı sunuyoruz.
-                        Teknik dosya hazırlama ve uygunluk değerlendirme süreçlerinde yanınızdayız.
+                        İç tetkik sonuçlarına göre iyileştirme önerileri ve akreditasyon süreçlerinde
+                        kapsamlı danışmanlık desteği sunuyoruz.
+                    </p>
+                </div>
+
+                <!-- Eğitim -->
+                <div class="glass-card related-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="activity-title">Eğitim Programları</h3>
+                    <div class="activity-badges">
+                        <span class="badge activity-badge">Standartlar</span>
+                        <span class="badge activity-badge">Tetkik</span>
+                        <span class="badge activity-badge">Yetkinlik</span>
+                    </div>
+                    <p class="activity-description">
+                        ISO standartları ve iç tetkik teknikleri konusunda personelinize
+                        profesyonel eğitim programları sunuyoruz.
                     </p>
                 </div>
 
@@ -728,25 +665,8 @@
                         <span class="badge activity-badge">Standart</span>
                     </div>
                     <p class="activity-description">
-                        Ürün, hizmet ve süreçlerin ulusal ve uluslararası standartlara uygunluğunun
-                        değerlendirilmesi konusunda uzman danışmanlık sunuyoruz.
-                    </p>
-                </div>
-
-                <!-- İthalat Teknik İnceleme -->
-                <div class="glass-card related-card">
-                    <div class="activity-icon">
-                        <i class="fas fa-box-open"></i>
-                    </div>
-                    <h3 class="activity-title">İthalat Teknik İnceleme</h3>
-                    <div class="activity-badges">
-                        <span class="badge activity-badge">Mevzuat</span>
-                        <span class="badge activity-badge">Teknik Dosya</span>
-                        <span class="badge activity-badge">Gümrük</span>
-                    </div>
-                    <p class="activity-description">
-                        İthal ürünlerin yasal mevzuat ve teknik gerekliliklere uygunluğunu sağlamak için
-                        kapsamlı inceleme ve danışmanlık hizmeti sunuyoruz.
+                        Ürün, hizmet ve süreçlerinizin ulusal ve uluslararası standartlara
+                        uygunluğunun değerlendirilmesi.
                     </p>
                 </div>
             </div>
@@ -757,10 +677,10 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Danışmanlık Hizmetlerimiz Hakkında Bilgi Alın</h2>
+                <h2>İç Tetkik Hizmetimiz Hakkında Bilgi Alın</h2>
                 <p>
-                    Uzman ekibimiz, işletmenizin ihtiyaçlarına özel çözümler sunmak için hazır.
-                    Hemen iletişime geçin, size nasıl yardımcı olabileceğimizi anlatalım.
+                    Kuruluşunuza özel iç tetkik planlaması için uzman ekibimizle iletişime geçin.
+                    Akreditasyon standartlarına uygun profesyonel tetkik hizmeti sunuyoruz.
                 </p>
                 <a href="index.html#iletisim" class="btn btn-primary cta-btn">
                     <i class="fas fa-envelope"></i>
@@ -796,7 +716,7 @@
                     <ul class="footer-links">
                         <li><a href="danismanlik.html">Danışmanlık</a></li>
                         <li><a href="ic-tetkik.html">İç Tetkik</a></li>
-                        <li><a href="index.html#hizmetler">Eğitim</a></li>
+                        <li><a href="egitim.html">Eğitim</a></li>
                         <li><a href="index.html#faaliyetler">Faaliyetler</a></li>
                     </ul>
                 </div>
@@ -875,12 +795,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Analytics Placeholder -->
-    <script>
-        window.GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
-        window.CLARITY_PROJECT_ID = 'YOUR_CLARITY_ID';
-    </script>
 
     <!-- Three.js for 3D Globe -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
