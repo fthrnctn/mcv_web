@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ISO/IEC 17065, 17020, 17025 İç Tetkik Hizmetleri | Akreditasyon öncesi ve sürdürme denetimleri. Deneyimli tetkikçilerle uygunsuzlukları önceden tespit edin.">
+    <meta name="keywords"
+        content="iç tetkik, internal audit, ISO 17065, ISO 17020, ISO 17025, akreditasyon, uygunluk değerlendirme, denetim">
+    <meta name="author" content="MCV Teknik">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.mcvconsultancy.com/ic-tetkik/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mcvconsultancy.com/ic-tetkik/">
+    <meta property="og:title" content="İç Tetkik Hizmetleri | MCV Teknik">
+    <meta property="og:description"
+        content="ISO/IEC 17065, 17020, 17025 Standartlarına Uygun İç Tetkik. Profesyonel denetim hizmetleri.">
+    <meta property="og:image" content="https://www.mcvconsultancy.com/assets/images/og-image.png">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="MCV Teknik">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.mcvconsultancy.com/ic-tetkik/">
+    <meta name="twitter:title" content="İç Tetkik Hizmetleri | MCV Teknik">
+    <meta name="twitter:description" content="ISO/IEC 17065, 17020, 17025 Standartlarına Uygun İç Tetkik.">
+    <meta name="twitter:image" content="https://www.mcvconsultancy.com/assets/images/og-image.png">
+
+    <title>İç Tetkik Hizmetleri | MCV Teknik</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/logo/mcv_logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Theme Toggle (load early to prevent flash) -->
+    <script src="../js/theme-toggle.js"></script>
+
+    <!-- Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Ana Sayfa",
+                "item": "https://www.mcvconsultancy.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "İç Tetkik Hizmetleri",
+                "item": "https://www.mcvconsultancy.com/ic-tetkik/"
+            }
+        ]
+    }
+    </script>
+
+    <!-- Structured Data - Service -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "İç Tetkik",
+        "provider": {
+            "@type": "Organization",
+            "name": "MCV Teknik"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Turkey"
+        },
+        "description": "ISO/IEC 17065, 17020, 17025 Standartlarına Uygun İç Tetkik ve Denetim Hizmetleri"
+    }
+    </script>
+
+    <!-- Page-specific styles -->
+    <style>
+        /* Globe Left Position for this page */
+        .globe-left .globe-container canvas {
+            transform: scaleX(-1);
+        }
+
+        /* Page Hero */
+        .page-hero {
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px var(--spacing-lg) var(--spacing-3xl);
+            position: relative;
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+            z-index: 1;
+        }
+
+        .page-hero-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-hero-title .hero-title-sub {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--text-primary);
+            -webkit-text-fill-color: initial;
+            background: none;
+            margin-top: var(--spacing-sm);
+        }
+
+        .page-hero-subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto var(--spacing-xl);
+        }
+
+        .page-hero .hero-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+            font-size: var(--font-size-sm);
+            color: var(--text-muted);
+        }
+
+        .breadcrumb a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-primary);
+        }
+
+        .breadcrumb i {
+            font-size: 0.6rem;
+        }
+
+        /* Service Detail Grid */
+        .services-detail-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-xl);
+        }
+
+        .service-detail-card {
+            padding: var(--spacing-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-detail-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent-primary) 0%, var(--accent-dark) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-detail-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-detail-icon {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .service-detail-icon i {
+            font-size: 2.5rem;
+            color: var(--accent-primary);
+            transition: all 0.4s ease;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(90deg,
+                    var(--accent-primary) 0%,
+                    var(--accent-primary) 40%,
+                    rgba(255, 255, 255, 0.9) 50%,
+                    var(--accent-primary) 60%,
+                    var(--accent-primary) 100%);
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .service-detail-card:hover .service-detail-icon i {
+            filter: drop-shadow(0 0 15px rgba(255, 107, 0, 0.6)) drop-shadow(0 0 30px rgba(255, 107, 0, 0.4));
+            transform: scale(1.15);
+            animation: iconPulse 1.5s ease-in-out infinite, iconShine 1.2s ease 0.3s forwards;
+        }
+
+        .service-detail-title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+
+        .service-detail-subtitle {
+            font-size: var(--font-size-sm);
+            color: var(--accent-primary);
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .service-detail-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .service-detail-description ul,
+        ul.service-detail-description {
+            margin-top: var(--spacing-md);
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .service-detail-description li,
+        ul.service-detail-description li {
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-detail-description li::before,
+        ul.service-detail-description li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.55em;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(255, 107, 0, 0.4);
+        }
+
+        /* Featured Service Card */
+        .featured-service {
+            grid-column: span 2;
+            display: flex;
+            gap: var(--spacing-2xl);
+            align-items: center;
+            background: linear-gradient(135deg, rgba(255, 107, 0, 0.05) 0%, rgba(255, 107, 0, 0.02) 100%);
+        }
+
+        .featured-service-content {
+            flex: 1;
+        }
+
+        .featured-service-visual {
+            flex: 0 0 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .featured-service-visual .service-detail-icon i {
+            font-size: 3rem;
+        }
+
+        /* Info Banner */
+        .info-banner {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.35) 0%, rgba(59, 130, 246, 0.25) 100%);
+            border: 2px solid rgba(59, 130, 246, 0.5);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-xl);
+            margin: var(--spacing-3xl) 0;
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-lg);
+            backdrop-filter: blur(10px);
+        }
+
+        [data-theme="dark"] .info-banner {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(59, 130, 246, 0.2) 100%);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+
+        .info-banner-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(59, 130, 246, 0.2);
+            border-radius: var(--radius-md);
+            color: #3b82f6;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .info-banner-content h4 {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            color: #3b82f6;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .info-banner-content p {
+            color: var(--text-secondary);
+        }
+
+        /* Related Activities */
+        .related-activities {
+            background: var(--bg-secondary);
+            padding: var(--spacing-4xl) 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-xl);
+        }
+
+        .related-card {
+            text-align: center;
+            padding: var(--spacing-xl);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .related-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(180deg, rgba(255, 107, 0, 0) 0%, rgba(255, 107, 0, 0) 100%);
+            pointer-events: none;
+            transition: background 0.4s ease 0.2s;
+            z-index: 0;
+        }
+
+        .related-card:hover::before {
+            background: linear-gradient(180deg, rgba(255, 107, 0, 0.15) 0%, rgba(255, 107, 0, 0) 100%);
+        }
+
+        .related-card>* {
+            position: relative;
+            z-index: 1;
+        }
+
+        .related-card .activity-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--accent-primary);
+            transition: all 0.4s ease;
+            display: inline-block;
+            background: linear-gradient(90deg,
+                    var(--accent-primary) 0%,
+                    var(--accent-primary) 40%,
+                    rgba(255, 255, 255, 0.9) 50%,
+                    var(--accent-primary) 60%,
+                    var(--accent-primary) 100%);
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .related-card:hover .activity-icon {
+            filter: drop-shadow(0 0 15px rgba(255, 107, 0, 0.6)) drop-shadow(0 0 30px rgba(255, 107, 0, 0.4));
+            transform: scale(1.15);
+            animation: iconPulse 1.5s ease-in-out infinite, iconShine 1.2s ease 0.3s forwards;
+        }
+
+        .related-card .activity-description {
+            flex-grow: 1;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-dark) 100%);
+            padding: var(--spacing-3xl) 0;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        [data-theme="dark"] .cta-section {
+            background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+            border-top: 2px solid var(--accent-primary);
+            border-bottom: 2px solid var(--accent-primary);
+        }
+
+        .cta-content h2 {
+            font-size: var(--font-size-2xl);
+            color: white;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .cta-content p {
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto var(--spacing-xl);
+        }
+
+        .cta-btn {
+            background: white;
+            color: var(--accent-primary);
+        }
+
+        .cta-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .services-detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-service {
+                grid-column: span 1;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .featured-service-visual {
+                order: -1;
+            }
+
+            .related-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-hero {
+                padding: 100px var(--spacing-md) var(--spacing-2xl);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Globe -->
+    <div class="globe-background globe-left">
+        <div class="globe-container">
+            <canvas id="globe-canvas"></canvas>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="../" class="navbar-logo">
+                <span>MCV</span>
+            </a>
+
+            <ul class="navbar-nav">
+                <li><a href="../" class="nav-link">Anasayfa</a></li>
+                <li><a href="../#hizmetler" class="nav-link">Hizmetler</a></li>
+                <li><a href="../#faaliyetler" class="nav-link">Faaliyetler</a></li>
+                <li><a href="../#hakkimizda" class="nav-link">Hakkımızda</a></li>
+                <li><a href="../#iletisim" class="nav-link">İletişim</a></li>
+            </ul>
+
+            <button class="theme-toggle" aria-label="Tema Değiştir">
+                <i class="fas fa-moon"></i>
+            </button>
+
+            <button class="mobile-menu-toggle" aria-label="Menü">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <nav class="breadcrumb">
+                <a href="../">Anasayfa</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="../#hizmetler">Hizmetler</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>İç Tetkik</span>
+            </nav>
+            <h1 class="page-hero-title">
+                İç Tetkik
+                <span class="hero-title-sub">Hizmetleri</span>
+            </h1>
+            <p class="page-hero-subtitle">
+                Akreditasyon ve belgelendirme kuruluşları için uluslararası standartlara uygun
+                profesyonel iç tetkik hizmetleri sunuyoruz.
+            </p>
+            <div class="hero-buttons">
+                <a href="#ic-tetkik-hizmetleri" class="btn btn-primary">
+                    <i class="fas fa-arrow-down"></i>
+                    Hizmetlerimizi Keşfedin
+                </a>
+                <a href="../#iletisim" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    Bize Ulaşın
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internal Audit Services Section -->
+    <section id="ic-tetkik-hizmetleri" class="section">
+        <div class="container">
+            <h2 class="section-title">İç Tetkik Hizmetlerimiz</h2>
+            <p class="section-subtitle">Akreditasyon standartlarına uygun profesyonel iç tetkik çözümleri</p>
+
+            <div class="services-detail-grid">
+                <!-- Featured: İç Tetkik Genel Bilgi -->
+                <div class="glass-card service-detail-card featured-service">
+                    <div class="featured-service-content">
+                        <span class="service-detail-subtitle">Profesyonel Denetim Hizmeti</span>
+                        <h3 class="service-detail-title">İç Tetkik Nedir?</h3>
+                        <p class="service-detail-description">
+                            İç tetkik, kuruluşunuzun yönetim sistemlerinin etkinliğini, verimliliğini ve
+                            uluslararası standartlara uygunluğunu bağımsız bir şekilde değerlendiren sistematik
+                            bir süreçtir. Akreditasyon ve belgelendirme kuruluşları için zorunlu olan bu süreç,
+                            sürekli iyileştirme ve uygunluk güvencesi sağlar.
+                        </p>
+                        <ul class="service-detail-description">
+                            <li>Yönetim sistemi etkinliğinin objektif değerlendirmesi</li>
+                            <li>Standart gerekliliklerine uygunluk doğrulaması</li>
+                            <li>İyileştirme fırsatlarının belirlenmesi</li>
+                            <li>Akreditasyon denetimine hazırlık</li>
+                            <li>Uygunsuzlukların tespiti ve düzeltici faaliyet önerileri</li>
+                        </ul>
+                    </div>
+                    <div class="featured-service-visual">
+                        <div class="service-detail-icon">
+                            <i class="fas fa-clipboard-list"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ISO/IEC 17065 İç Tetkik -->
+                <div class="glass-card service-detail-card">
+                    <div class="service-detail-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <span class="service-detail-subtitle">Ürün Belgelendirme Kuruluşları</span>
+                    <h3 class="service-detail-title">ISO/IEC 17065 İç Tetkik</h3>
+                    <p class="service-detail-description">
+                        Ürün, proses ve hizmet belgelendirmesi yapan kuruluşlar için ISO/IEC 17065 standardı
+                        kapsamında kapsamlı iç tetkik hizmeti sunuyoruz. Belgelendirme kuruluşunuzun tüm
+                        süreçlerini, dokümantasyonunu ve uygulamalarını standart gerekliliklerine göre
+                        değerlendiriyoruz.
+                    </p>
+                    <ul class="service-detail-description">
+                        <li>Belgelendirme süreçlerinin uygunluk değerlendirmesi</li>
+                        <li>Tarafsızlık ve bağımsızlık gerekliliklerinin kontrolü</li>
+                        <li>Personel yetkinlik değerlendirmesi</li>
+                        <li>Dokümantasyon sistemi incelemesi</li>
+                        <li>TÜRKAK denetimine hazırlık desteği</li>
+                    </ul>
+                </div>
+
+                <!-- ISO/IEC 17020 İç Tetkik -->
+                <div class="glass-card service-detail-card">
+                    <div class="service-detail-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <span class="service-detail-subtitle">Muayene Kuruluşları</span>
+                    <h3 class="service-detail-title">ISO/IEC 17020 İç Tetkik</h3>
+                    <p class="service-detail-description">
+                        Çeşitli tipteki muayene kuruluşlarının çalıştırılması için genel kriterleri belirleyen
+                        ISO/IEC 17020 standardı kapsamında profesyonel iç tetkik hizmeti veriyoruz. A, B ve C
+                        tipi muayene kuruluşları için özelleştirilmiş tetkik yaklaşımı uyguluyoruz.
+                    </p>
+                    <ul class="service-detail-description">
+                        <li>Muayene süreç ve prosedürlerinin değerlendirmesi</li>
+                        <li>Bağımsızlık ve tarafsızlık gerekliliklerinin kontrolü</li>
+                        <li>Muayene personeli yetkinlik doğrulaması</li>
+                        <li>Ekipman ve kalibrasyon yönetimi incelemesi</li>
+                        <li>Raporlama sisteminin uygunluk değerlendirmesi</li>
+                    </ul>
+                </div>
+
+                <!-- ISO/IEC 17025 İç Tetkik -->
+                <div class="glass-card service-detail-card">
+                    <div class="service-detail-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <span class="service-detail-subtitle">Laboratuvarlar</span>
+                    <h3 class="service-detail-title">ISO/IEC 17025 İç Tetkik</h3>
+                    <p class="service-detail-description">
+                        Deney ve kalibrasyon laboratuvarlarının yeterliliği için genel şartları belirleyen
+                        ISO/IEC 17025 standardı kapsamında detaylı iç tetkik hizmeti sunuyoruz. Laboratuvarınızın
+                        teknik ve yönetim gerekliliklerine uygunluğunu kapsamlı bir şekilde değerlendiriyoruz.
+                    </p>
+                    <ul class="service-detail-description">
+                        <li>Laboratuvar yönetim sistemi değerlendirmesi</li>
+                        <li>Teknik yeterlilik ve personel yetkinlik kontrolü</li>
+                        <li>Ekipman yönetimi ve kalibrasyon izlenebilirliği</li>
+                        <li>Metot validasyonu ve belirsizlik hesaplamalarının incelenmesi</li>
+                        <li>Kalite güvence mekanizmalarının uygunluk kontrolü</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Info Banner -->
+            <div class="info-banner">
+                <div class="info-banner-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <div class="info-banner-content">
+                    <h4>Neden İç Tetkik Önemlidir?</h4>
+                    <p>
+                        İç tetkikler, akreditasyon kuruluşları tarafından zorunlu tutulan ve yönetim sisteminizin
+                        etkinliğini sürekli olarak izlemenizi sağlayan kritik bir süreçtir. Düzenli iç tetkikler,
+                        dış denetimlere hazırlık sağlar, iyileştirme fırsatlarını ortaya çıkarır ve müşteri
+                        güvenini artırır. Deneyimli tetkikçilerimizle bu süreci profesyonelce yönetiyoruz.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Activities Section -->
+    <section class="related-activities">
+        <div class="container">
+            <h2 class="section-title">İlgili Faaliyet Alanlarımız</h2>
+            <p class="section-subtitle">İç tetkik hizmetlerimizle bağlantılı diğer uzmanlık alanlarımız</p>
+
+            <div class="related-grid">
+                <!-- CE İşareti -->
+                <div class="glass-card related-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <h3 class="activity-title">CE İşareti</h3>
+                    <div class="activity-badges">
+                        <span class="badge activity-badge">AB Uyum</span>
+                        <span class="badge activity-badge">Güvenlik</span>
+                        <span class="badge activity-badge">Serbest Dolaşım</span>
+                    </div>
+                    <p class="activity-description">
+                        Ürünlerinizin AB pazarına güvenle girmesi için CE işaretleme danışmanlığı sunuyoruz.
+                        Teknik dosya hazırlama ve uygunluk değerlendirme süreçlerinde yanınızdayız.
+                    </p>
+                </div>
+
+                <!-- Uygunluk Değerlendirme -->
+                <div class="glass-card related-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="activity-title">Uygunluk Değerlendirme</h3>
+                    <div class="activity-badges">
+                        <span class="badge activity-badge">Kalite</span>
+                        <span class="badge activity-badge">Güvenlik</span>
+                        <span class="badge activity-badge">Standart</span>
+                    </div>
+                    <p class="activity-description">
+                        Ürün, hizmet ve süreçlerin ulusal ve uluslararası standartlara uygunluğunun
+                        değerlendirilmesi konusunda uzman danışmanlık sunuyoruz.
+                    </p>
+                </div>
+
+                <!-- İthalat Teknik İnceleme -->
+                <div class="glass-card related-card">
+                    <div class="activity-icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <h3 class="activity-title">İthalat Teknik İnceleme</h3>
+                    <div class="activity-badges">
+                        <span class="badge activity-badge">Mevzuat</span>
+                        <span class="badge activity-badge">Teknik Dosya</span>
+                        <span class="badge activity-badge">Gümrük</span>
+                    </div>
+                    <p class="activity-description">
+                        İthal ürünlerin yasal mevzuat ve teknik gerekliliklere uygunluğunu sağlamak için
+                        kapsamlı inceleme ve danışmanlık hizmeti sunuyoruz.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>İç Tetkik Hizmetimiz Hakkında Bilgi Alın</h2>
+                <p>
+                    Kuruluşunuza özel iç tetkik planlaması için uzman ekibimizle iletişime geçin.
+                    Akreditasyon standartlarına uygun profesyonel tetkik hizmeti sunuyoruz.
+                </p>
+                <a href="../#iletisim" class="btn btn-primary cta-btn">
+                    <i class="fas fa-envelope"></i>
+                    İletişime Geçin
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../" class="navbar-logo">
+                        <span>MCV</span>
+                    </a>
+                    <p>Uluslararası standartlarda kalite ve güvenlik danışmanlığı ile işletmenizi geleceğe taşıyoruz.
+                    </p>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Hakkımızda</h4>
+                    <ul class="footer-links">
+                        <li><a href="../#hakkimizda">Kurumsal</a></li>
+                        <li><a href="../#hakkimizda">Vizyonumuz</a></li>
+                        <li><a href="../#hakkimizda">Ekibimiz</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Hizmetler</h4>
+                    <ul class="footer-links">
+                        <li><a href="../danismanlik/">Danışmanlık</a></li>
+                        <li><a href="../ic-tetkik/">İç Tetkik</a></li>
+                        <li><a href="../egitim/">Eğitim</a></li>
+                        <li><a href="../#faaliyetler">Faaliyetler</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>İletişim</h4>
+                    <ul class="footer-links">
+                        <li><a href="tel:+905333447153">+90 533 344 7153</a></li>
+                        <li><a href="mailto:info@mcvteknik.com">info@mcvteknik.com</a></li>
+                        <li><a href="../#iletisim">Ankara, Türkiye</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column footer-nmi">
+                    <h4>NMI Türkiye Temsilcisi</h4>
+                    <a href="https://www.nmi.nl" target="_blank" rel="noopener" class="nmi-logo-link">
+                        <img src="../assets/images/logo/nmi_reseller_logo.svg" alt="NMI Reseller" class="nmi-logo">
+                    </a>
+                    <p class="nmi-footer-desc">Ürünlerinizi NMI'ya test ettirin, dünya markasından onay alın.</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 MCV - Tüm Hakları Saklıdır.</p>
+                <div class="footer-bottom-links">
+                    <a href="../gizlilik/">Gizlilik Politikası</a>
+                    <a href="gizlilik/#kvkk">KVKK</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsentBanner" class="cookie-banner">
+        <button id="cookieClose" class="cookie-close" aria-label="Kapat">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="cookie-banner-content">
+            <div class="cookie-banner-text">
+                <h3><i class="fas fa-cookie-bite"></i> Çerez Kullanımı</h3>
+                <p>
+                    Web sitemizde deneyiminizi iyileştirmek için çerezler kullanıyoruz.
+                    Detaylı bilgi için <a href="../gizlilik/">Gizlilik Politikamızı</a> inceleyebilirsiniz.
+                </p>
+            </div>
+            <div class="cookie-banner-buttons">
+                <button id="cookieAcceptAll" class="cookie-btn cookie-btn-primary">Tümünü Kabul Et</button>
+                <button id="cookieAcceptNecessary" class="cookie-btn cookie-btn-secondary">Yalnızca Zorunlu</button>
+                <button id="cookieSettingsBtn" class="cookie-btn cookie-btn-link">Ayarlar</button>
+            </div>
+
+            <!-- Detaylı Ayarlar Paneli -->
+            <div id="cookieSettings" class="cookie-settings">
+                <div class="cookie-category">
+                    <div class="cookie-category-info">
+                        <h4>Zorunlu Çerezler</h4>
+                        <p>Web sitesinin düzgün çalışması için gerekli çerezler. Devre dışı bırakılamaz.</p>
+                    </div>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" checked disabled>
+                        <span class="cookie-toggle-slider"></span>
+                    </label>
+                </div>
+                <div class="cookie-category">
+                    <div class="cookie-category-info">
+                        <h4>Analitik Çerezler</h4>
+                        <p>Ziyaretçi davranışlarını analiz etmek için kullanılır (Google Analytics, Microsoft Clarity).
+                        </p>
+                    </div>
+                    <label class="cookie-toggle">
+                        <input type="checkbox" id="cookieAnalytics">
+                        <span class="cookie-toggle-slider"></span>
+                    </label>
+                </div>
+                <button id="cookieSaveSettings" class="cookie-btn cookie-btn-primary">Seçenekleri Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Three.js for 3D Globe -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="../js/globe.js"></script>
+
+    <!-- Cookie Consent Manager -->
+    <script src="../js/cookie-consent.js"></script>
+
+    <!-- Main JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

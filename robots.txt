@@ -1,0 +1,15 @@
+# MCV Teknik Robots.txt
+# https://www.mcvconsultancy.com
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow private/admin pages
+Disallow: /gizlilik/
+
+# Sitemap location
+Sitemap: https://www.mcvconsultancy.com/sitemap.xml
+
+# Crawl-delay (optional, for polite crawling)
+Crawl-delay: 1
