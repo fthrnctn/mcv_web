@@ -153,7 +153,7 @@
 
         // n8n Webhook URL - Google Cloud VM'deki n8n instance
         // Bu URL'yi kendi n8n webhook URL'iniz ile değiştirin
-        const N8N_WEBHOOK_URL = 'https://YOUR_N8N_DOMAIN/webhook/contact-form';
+        const N8N_WEBHOOK_URL = 'https://n8n.mcvconsultancy.com/webhook/contact-form';
 
         form.addEventListener('submit', async function (e) {
             e.preventDefault();
