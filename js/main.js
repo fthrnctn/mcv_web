@@ -151,8 +151,16 @@
         const form = document.querySelector('.contact-form');
         if (!form) return;
 
-        form.addEventListener('submit', function (e) {
+        // n8n Webhook URL - Google Cloud VM'deki n8n instance
+        // Bu URL'yi kendi n8n webhook URL'iniz ile değiştirin
+        const N8N_WEBHOOK_URL = 'https://YOUR_N8N_DOMAIN/webhook/contact-form';
+
+        form.addEventListener('submit', async function (e) {
             e.preventDefault();
+
+            // Get form elements
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
 
             // Get form data
             const formData = new FormData(form);
@@ -160,22 +168,71 @@
 
             // Simple validation
             if (!data.name || !data.email || !data.message) {
-                alert('Lütfen tüm zorunlu alanları doldurun.');
+                showFormMessage(form, 'Lütfen tüm zorunlu alanları doldurun.', 'error');
                 return;
             }
 
             // Email validation
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(data.email)) {
-                alert('Lütfen geçerli bir e-posta adresi girin.');
+                showFormMessage(form, 'Lütfen geçerli bir e-posta adresi girin.', 'error');
                 return;
             }
 
-            // TODO: Send form data to server
-            console.log('Form data:', data);
-            alert('Mesajınız başarıyla gönderildi! En kısa sürede sizinle iletişime geçeceğiz.');
-            form.reset();
+            // Add timestamp and source
+            data.timestamp = new Date().toISOString();
+            data.source = 'mcvconsultancy.com';
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gönderiliyor...';
+
+            try {
+                const response = await fetch(N8N_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    showFormMessage(form, 'Mesajınız başarıyla gönderildi! En kısa sürede sizinle iletişime geçeceğiz.', 'success');
+                    form.reset();
+                } else {
+                    throw new Error('Sunucu hatası');
+                }
+            } catch (error) {
+                console.error('Form gönderim hatası:', error);
+                showFormMessage(form, 'Mesaj gönderilemedi. Lütfen daha sonra tekrar deneyin veya doğrudan bizimle iletişime geçin.', 'error');
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
         });
+    }
+
+    // Form message helper function
+    function showFormMessage(form, message, type) {
+        // Remove existing message
+        const existingMsg = form.querySelector('.form-message');
+        if (existingMsg) existingMsg.remove();
+
+        // Create message element
+        const msgElement = document.createElement('div');
+        msgElement.className = 'form-message form-message-' + type;
+        msgElement.innerHTML = '<i class="fas ' + (type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle') + '"></i> <span>' + message + '</span>';
+
+        // Insert before submit button
+        const submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.parentNode.insertBefore(msgElement, submitBtn);
+
+        // Auto-hide after 5 seconds
+        setTimeout(function () {
+            msgElement.classList.add('fade-out');
+            setTimeout(function () { msgElement.remove(); }, 300);
+        }, 5000);
     }
 
     // ========== LOGO CAROUSEL ==========
