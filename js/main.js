@@ -152,7 +152,6 @@
         if (!form) return;
 
         // n8n Webhook URL - Google Cloud VM'deki n8n instance
-        // Bu URL'yi kendi n8n webhook URL'iniz ile değiştirin
         const N8N_WEBHOOK_URL = 'https://n8n.mcvconsultancy.com/webhook/contact-form';
 
         form.addEventListener('submit', async function (e) {
@@ -188,19 +187,27 @@
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Gönderiliyor...';
 
             try {
+                console.log('Form gönderiliyor:', data);
+
                 const response = await fetch(N8N_WEBHOOK_URL, {
                     method: 'POST',
+                    mode: 'cors',
                     headers: {
                         'Content-Type': 'application/json',
+                        'Accept': 'application/json'
                     },
                     body: JSON.stringify(data)
                 });
+
+                console.log('Yanıt durumu:', response.status);
 
                 if (response.ok) {
                     showFormMessage(form, 'Mesajınız başarıyla gönderildi! En kısa sürede sizinle iletişime geçeceğiz.', 'success');
                     form.reset();
                 } else {
-                    throw new Error('Sunucu hatası');
+                    const errorText = await response.text();
+                    console.error('Sunucu hatası:', response.status, errorText);
+                    throw new Error('Sunucu hatası: ' + response.status);
                 }
             } catch (error) {
                 console.error('Form gönderim hatası:', error);
