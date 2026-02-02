@@ -192,9 +192,9 @@
                 const response = await fetch(N8N_WEBHOOK_URL, {
                     method: 'POST',
                     mode: 'cors',
+                    credentials: 'omit',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
+                        'Content-Type': 'application/json'
                     },
                     body: JSON.stringify(data)
                 });
